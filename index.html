@@ -1,0 +1,3272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Lenore Pharmaceuticals Private Limited — Superior quality pharmaceutical products across Gynecology & Primary Care. Innovating Lives, Cultivating Happiness.">
+  <title>Lenore Pharmaceuticals — Innovating Lives, Cultivating Happiness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+
+      /* PRIMARY BRAND RED */
+      --crimson: #E10600;
+      --rose: #FF2A2A;
+      --coral: #FF3B3B;
+
+      /* YELLOW ACCENT */
+      --amber: #FFC400;
+      --gold: #FFD84D;
+
+      /* LIGHT BACKGROUNDS */
+      --blush-50: #FFF6F5;
+      --blush-100: #FFE3E0;
+      --blush-200: #FFC9C4;
+
+      /* TEXT COLORS */
+      --ink: #1A1A1A;
+      --ink-80: #333333;
+      --ink-60: #555555;
+      --ink-40: #777777;
+      --ink-20: #BBBBBB;
+      --ink-10: #EEEEEE;
+
+      /* MAIN BACKGROUNDS */
+      --white: #FFFFFF;
+      --off-white: #FFFDF8;
+      --surface: #FFF8F2;
+
+      /* GRADIENTS */
+      --g-brand: linear-gradient(135deg, #E10600 0%, #FF2A2A 50%, #FFC400 100%);
+      --g-warm: linear-gradient(135deg, #E10600 0%, #FFC400 100%);
+      --g-gold: linear-gradient(135deg, #FFC400 0%, #FFD84D 100%);
+      --g-deep: linear-gradient(160deg, #1A1A1A 0%, #333333 100%);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --sh-sm: 0 4px 16px rgba(192, 57, 43, 0.08);
+      --sh-md: 0 8px 32px rgba(192, 57, 43, 0.12);
+      --sh-lg: 0 20px 60px rgba(192, 57, 43, 0.14);
+      --sh-xl: 0 32px 80px rgba(192, 57, 43, 0.18);
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--blush-50);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--g-warm);
+      border-radius: 4px;
+    }
+
+    ::selection {
+      background: var(--blush-200);
+      color: var(--crimson);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-pad {
+      padding: 100px 0;
+    }
+
+    .text-brand {
+      background: var(--g-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: .8rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--g-warm);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      line-height: 1.08;
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-60);
+      max-width: 560px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--blush-100);
+      color: var(--crimson);
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(192, 57, 43, .15);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: .8rem 1.9rem;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      transition: all .3s var(--ease);
+      border: none;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--g-warm);
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(192, 57, 43, .28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(192, 57, 43, .4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--crimson);
+      border: 1.5px solid rgba(192, 57, 43, .3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--crimson);
+      background: var(--blush-50);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, .12);
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, .25);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    /* TOP BAR */
+    /* .topbar { background: var(--ink); padding: .55rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; font-size: .72rem; font-weight: 500; color: rgba(255,255,255,.5); }
+.topbar-left { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+.topbar-item { display: flex; align-items: center; gap: 5px; }
+.topbar-right { display: flex; align-items: center; gap: .6rem; }
+.topbar-link { color: rgba(255,255,255,.4); font-size: .67rem; font-weight: 600; letter-spacing: .08em; transition: color .2s; padding: .15rem .5rem; }
+.topbar-link:hover { color: rgba(255,255,255,.8); }
+.topbar-divider { width: 1px; height: 12px; background: rgba(255,255,255,.12); } */
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--ink-10);
+      box-shadow: 0 2px 20px rgba(18, 8, 13, .06);
+      transition: box-shadow .3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 32px rgba(18, 8, 13, .1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-brand-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: var(--g-warm);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: .01em;
+      display: block;
+    }
+
+    .nav-brand-tagline {
+      font-size: .55rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: .2rem;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: .45rem .85rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--ink-60);
+      letter-spacing: .02em;
+      border-radius: var(--r-sm);
+      transition: all .2s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--crimson);
+      background: var(--blush-50);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--g-warm);
+      border-radius: 2px;
+      display: block;
+      transition: all .3s var(--ease);
+    }
+
+    .hamburger.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+    .mob-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--white);
+      transform: translateX(100%);
+      transition: transform .38s var(--ease);
+      overflow-y: auto;
+    }
+
+    .mob-menu.open {
+      transform: translateX(0);
+    }
+
+    .mob-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 1.8rem;
+      border-bottom: 1px solid var(--ink-10);
+      background: var(--off-white);
+    }
+
+    .mob-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--blush-100);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--crimson);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .mob-body {
+      padding: 1.5rem 1.8rem;
+    }
+
+    .mob-nav {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mob-nav li {
+      border-bottom: 1px solid var(--ink-10);
+    }
+
+    .mob-nav a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--ink-80);
+      transition: color .2s;
+    }
+
+    .mob-nav a:hover {
+      color: var(--crimson);
+    }
+
+    .mob-nav a::after {
+      content: '→';
+      opacity: .3;
+      transition: all .2s;
+    }
+
+    .mob-nav a:hover::after {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    .mob-contact-box {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      background: var(--blush-50);
+      border-radius: var(--r-md);
+      border: 1px solid rgba(192, 57, 43, .1);
+    }
+
+    .mob-contact-label {
+      font-size: .65rem;
+      font-weight: 800;
+      color: var(--crimson);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+    }
+
+    .mob-contact-val {
+      font-size: .82rem;
+      color: var(--ink-60);
+      margin-top: .2rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 74px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hb-circle {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .hb-circle.c1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(192, 57, 43, .06) 0%, transparent 70%);
+      top: -15%;
+      right: -8%;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    .hb-circle.c2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 120, 10, .05) 0%, transparent 70%);
+      bottom: -10%;
+      left: -5%;
+      animation: float 12s ease-in-out infinite 5s;
+    }
+
+    .hb-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(192, 57, 43, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(192, 57, 43, .04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 60% 50%, black 0%, transparent 100%);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0)
+      }
+
+      33% {
+        transform: translate(20px, -15px)
+      }
+
+      66% {
+        transform: translate(-10px, 10px)
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      padding: 30px 0;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blush-100);
+      border: 1px solid rgba(192, 57, 43, .2);
+      color: var(--crimson);
+      padding: .45rem 1.1rem;
+      border-radius: 50px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      align-self: flex-start;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--crimson);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.6);
+        opacity: .5
+      }
+    }
+
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5.5vw, 4.6rem);
+      line-height: 1.05;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    .hero-h1 .h1-sub {
+      display: block;
+      font-style: italic;
+      font-size: .75em;
+      color: var(--amber);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-60);
+      max-width: 500px;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: .9rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    /* HERO SLIDER */
+    .hero-slider {
+      position: relative;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--sh-xl);
+      aspect-ratio: 5/4;
+      background: var(--ink);
+    }
+
+    .hs-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .9s cubic-bezier(.65, 0, .35, 1);
+    }
+
+    .hs-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .hs-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--ink-80) 100%);
+    }
+
+    .hs-slide img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform 6s cubic-bezier(.22, 1, .36, 1);
+      z-index: 1;
+    }
+
+    .hs-slide.active img {
+      transform: scale(1);
+    }
+
+    .hs-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(18, 8, 13, .72) 0%, rgba(18, 8, 13, .25) 50%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hs-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 2.2rem;
+      z-index: 4;
+    }
+
+    .hs-caption-eyebrow {
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: .4rem;
+    }
+
+    .hs-caption h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      color: var(--white);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .hs-controls {
+      position: absolute;
+      bottom: 1.6rem;
+      right: 1.8rem;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .hs-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--r-sm);
+      border: 1px solid rgba(255, 255, 255, .25);
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(8px);
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .25s;
+    }
+
+    .hs-btn:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+    }
+
+    .hs-counter {
+      font-size: .68rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, .7);
+      letter-spacing: .12em;
+      padding: 0 .5rem;
+    }
+
+    .hs-dots {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.8rem;
+      z-index: 5;
+      display: flex;
+      gap: 6px;
+    }
+
+    .hs-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, .35);
+      transition: all .3s;
+      padding: 0;
+    }
+
+    .hs-dot.active {
+      background: white;
+      transform: scale(1.5);
+    }
+
+    .hs-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--g-warm);
+      z-index: 6;
+      border-radius: 0 3px 0 0;
+      width: 0%;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--g-warm);
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 1.8rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, .15);
+      transition: background .3s;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-item:hover {
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: .67rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: rgba(255, 255, 255, .72);
+      margin-top: .3rem;
+      display: block;
+    }
+
+    /* MODERN TICKER */
+    .modern-ticker {
+      background: #ff0000;
+      overflow: hidden;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 60px;
+      width: max-content;
+      animation: tickerScroll 25s linear infinite;
+    }
+
+    .ticker-track span {
+      color: #ffffff;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .ticker-track span::after {
+      content: "•";
+      margin-left: 60px;
+      color: #fff700;
+    }
+
+    @keyframes tickerScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* SERVICES */
+    .services-sec {
+      background: var(--white);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2.2rem;
+      transition: all .35s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--g-warm);
+      transform: scaleX(0);
+      transition: transform .35s var(--ease);
+      transform-origin: left;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--sh-lg);
+      border-color: rgba(192, 57, 43, .15);
+      transform: translateY(-5px);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(145deg, #FFF5F6 0%, #FFF8F2 100%);
+      border-color: rgba(192, 57, 43, .12);
+    }
+
+    .sc-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--r-md);
+      background: var(--blush-100);
+      border: 1.5px solid rgba(192, 57, 43, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.4rem;
+      transition: all .3s;
+    }
+
+    .service-card:hover .sc-icon {
+      background: var(--g-warm);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(192, 57, 43, .3);
+    }
+
+    .sc-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .6rem;
+    }
+
+    .sc-desc {
+      font-size: .88rem;
+      line-height: 1.78;
+      color: var(--ink-60);
+    }
+
+    .sc-tags {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    /* ABOUT */
+    .about-sec {
+      background: var(--surface);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+
+    .mission-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 2.8rem;
+      border: 1.5px solid rgba(192, 57, 43, .1);
+      box-shadow: var(--sh-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-card::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -15%;
+      width: 55%;
+      height: 55%;
+      background: radial-gradient(circle, rgba(212, 120, 10, .08), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .mission-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--r-md);
+      background: var(--g-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 8px 24px rgba(192, 57, 43, .3);
+    }
+
+    .mission-card h3 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .7rem;
+    }
+
+    .mission-card p {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--ink-60);
+    }
+
+    .mission-list {
+      margin-top: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .mission-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--ink-60);
+    }
+
+    .mission-item-dot {
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 2px;
+      transform: rotate(45deg);
+      background: var(--g-warm);
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 0;
+      right: 2rem;
+      background: var(--g-warm);
+      color: var(--white);
+      border-radius: var(--r-lg);
+      padding: 1.2rem 1.7rem;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(192, 57, 43, .4);
+    }
+
+    .badge-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      display: block;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .badge-lbl {
+      font-size: .6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      opacity: .85;
+    }
+
+    .about-text {
+      padding-top: .5rem;
+    }
+
+    .values-list {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+      margin-top: 1.6rem;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      border-radius: var(--r-md);
+      border: 1.5px solid var(--ink-10);
+      background: var(--white);
+      transition: all .3s var(--ease);
+    }
+
+    .value-item:hover {
+      border-color: rgba(192, 57, 43, .2);
+      box-shadow: var(--sh-sm);
+      transform: translateX(4px);
+    }
+
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: var(--r-sm);
+      background: var(--blush-100);
+      border: 1.5px solid rgba(192, 57, 43, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .value-title {
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--ink);
+      margin-bottom: .2rem;
+    }
+
+    .value-desc {
+      font-size: .78rem;
+      color: var(--ink-60);
+      line-height: 1.6;
+    }
+
+    /* PRODUCTS */
+    .products-sec {
+      background: var(--white);
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .prod-filter {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: .5rem 1.1rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--ink-10);
+      background: var(--white);
+      color: var(--ink-60);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      transition: all .25s;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--blush-100);
+      border-color: rgba(192, 57, 43, .2);
+      color: var(--crimson);
+    }
+
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .prod-card {
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-md);
+      padding: 1.6rem;
+      transition: all .3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prod-card-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--g-warm);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .3s var(--ease);
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prod-card:hover {
+      box-shadow: var(--sh-md);
+      transform: translateY(-3px);
+      border-color: rgba(192, 57, 43, .18);
+    }
+
+    .prod-card:hover .prod-card-accent {
+      transform: scaleY(1);
+    }
+
+    .prod-cat {
+      font-size: .6rem;
+      font-weight: 800;
+      color: var(--amber);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+
+    .prod-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .4rem;
+      line-height: 1.25;
+    }
+
+    .prod-desc {
+      font-size: .76rem;
+      color: var(--ink-60);
+      line-height: 1.65;
+    }
+
+    .prod-badge {
+      margin-top: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--blush-100);
+      color: var(--crimson);
+      padding: .2rem .65rem;
+      border-radius: 50px;
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(192, 57, 43, .12);
+    }
+
+    .prod-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .prod-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* COMMITMENT BANNER */
+    .commitment-banner {
+      background: var(--g-deep);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cb-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .cb-blob.a {
+      width: 400px;
+      height: 400px;
+      background: rgba(192, 57, 43, .18);
+      top: -20%;
+      right: -5%;
+    }
+
+    .cb-blob.b {
+      width: 350px;
+      height: 350px;
+      background: rgba(212, 120, 10, .12);
+      bottom: -20%;
+      left: 5%;
+    }
+
+    .cb-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cb-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: rgba(255, 255, 255, .8);
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .cb-left h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .cb-left p {
+      font-size: .96rem;
+      line-height: 1.82;
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 1.8rem;
+    }
+
+    .cb-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .cb-card {
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--r-lg);
+      padding: 1.6rem;
+      text-align: center;
+      transition: background .3s;
+    }
+
+    .cb-card:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .cb-card-icon {
+      font-size: 2rem;
+      margin-bottom: .7rem;
+      display: block;
+    }
+
+    .cb-card-title {
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--white);
+      margin-bottom: .3rem;
+    }
+
+    .cb-card-desc {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.6;
+    }
+
+    /* WHY */
+    .why-sec {
+      background: var(--surface);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .feat-card {
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-md);
+      padding: 1.6rem;
+      transition: all .3s var(--ease);
+    }
+
+    .feat-card:hover {
+      background: var(--g-warm);
+      border-color: transparent;
+      box-shadow: 0 12px 40px rgba(192, 57, 43, .28);
+      transform: scale(1.02);
+    }
+
+    .feat-card:hover .feat-title,
+    .feat-card:hover .feat-desc {
+      color: var(--white);
+    }
+
+    .feat-icon {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: .7rem;
+    }
+
+    .feat-title {
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--ink);
+      margin-bottom: .3rem;
+      transition: color .3s;
+    }
+
+    .feat-desc {
+      font-size: .76rem;
+      color: var(--ink-60);
+      line-height: 1.6;
+      transition: color .3s;
+    }
+
+    .why-promise {
+      background: var(--white);
+      border: 1.5px solid rgba(192, 57, 43, .1);
+      border-radius: var(--r-xl);
+      padding: 3.2rem;
+      box-shadow: var(--sh-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-promise::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -20%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(192, 57, 43, .05), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .wp-eyebrow {
+      display: block;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: .6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-promise h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: .9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-promise>p {
+      font-size: .88rem;
+      color: var(--ink-60);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .promise-list {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .promise-item {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--ink-80);
+    }
+
+    .promise-check {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--g-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: .65rem;
+      font-weight: 900;
+      box-shadow: 0 4px 12px rgba(192, 57, 43, .3);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-sec {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: all .3s var(--ease);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--sh-md);
+      border-color: rgba(192, 57, 43, .15);
+      transform: translateY(-4px);
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 4rem;
+      line-height: .5;
+      background: var(--g-warm);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      display: block;
+      font-weight: 700;
+    }
+
+    .stars {
+      color: var(--amber);
+      font-size: .75rem;
+      letter-spacing: 3px;
+      margin-bottom: .9rem;
+    }
+
+    .quote-text {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--ink-60);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--g-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: .86rem;
+      color: var(--ink);
+    }
+
+    .author-role {
+      font-size: .7rem;
+      color: var(--ink-40);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: 2px;
+    }
+
+    /* CTA */
+    .cta-sec {
+      background: linear-gradient(160deg, var(--blush-50) 0%, #FFF8F2 100%);
+      padding: 90px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192, 57, 43, .05), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* CONTACT */
+    .contact-sec {
+      background: var(--surface);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .8rem;
+      line-height: 1.15;
+    }
+
+    .contact-info>p {
+      font-size: .94rem;
+      color: var(--ink-60);
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border-radius: var(--r-sm);
+      background: var(--blush-100);
+      border: 1.5px solid rgba(192, 57, 43, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+    }
+
+    .contact-label {
+      font-size: .62rem;
+      font-weight: 800;
+      color: var(--crimson);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: .2rem;
+    }
+
+    .contact-value {
+      font-size: .86rem;
+      color: var(--ink-60);
+      line-height: 1.6;
+    }
+
+    .contact-value a {
+      color: var(--crimson);
+      font-weight: 600;
+      transition: opacity .2s;
+    }
+
+    .contact-value a:hover {
+      opacity: .75;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 2.8rem;
+      border: 1.5px solid var(--ink-10);
+      box-shadow: var(--sh-xl);
+    }
+
+    .form-title {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .3rem;
+    }
+
+    .form-subtitle {
+      font-size: .82rem;
+      color: var(--ink-40);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .67rem;
+      font-weight: 800;
+      color: var(--ink-40);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .45rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-sm);
+      padding: .85rem 1rem;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: .88rem;
+      outline: none;
+      transition: all .25s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--ink-20);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--crimson);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(192, 57, 43, .07);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C0392B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      border-radius: var(--r-sm);
+      background: var(--g-warm);
+      color: var(--white);
+      border: none;
+      font-family: var(--sans);
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      cursor: pointer;
+      transition: all .3s var(--ease);
+      box-shadow: 0 6px 24px rgba(192, 57, 43, .28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(192, 57, 43, .4);
+    }
+
+    .form-submit:disabled {
+      opacity: .7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: .72rem;
+      color: var(--ink-40);
+      margin-top: .9rem;
+      line-height: 1.5;
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s ease;
+      z-index: 9999;
+    }
+
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+      transform: scale(0.8);
+      transition: all .3s ease;
+    }
+
+    .popup.active .popup-box {
+      transform: scale(1);
+    }
+
+    .popup-icon {
+      width: 60px;
+      height: 60px;
+      background: #e10600;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 15px;
+    }
+
+    .popup-box h3 {
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .popup-box p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .popup-box button {
+      background: #e10600;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background: #c40000;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      padding: 70px 0 32px;
+      border-top: 1px solid #eee;
+    }
+
+    .ft-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3.5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Brand text */
+    .ft-brand p {
+      color: #666;
+      font-size: .83rem;
+      line-height: 1.78;
+      max-width: 250px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Social icons */
+    .ft-socials {
+      display: flex;
+      gap: .6rem;
+    }
+
+    .ft-social {
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: .75rem;
+      font-weight: 700;
+      transition: all .3s;
+    }
+
+    .ft-social:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: #fff;
+    }
+
+    /* Column titles */
+    .ft-col h4 {
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 1.3rem;
+      color: var(--crimson);
+    }
+
+    /* Links */
+    .ft-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+
+    .ft-col a {
+      color: #555;
+      font-size: .83rem;
+      transition: color .25s;
+    }
+
+    .ft-col a:hover {
+      color: var(--crimson);
+    }
+
+    /* Bottom area */
+    .ft-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .ft-copy {
+      color: #777;
+      font-size: .76rem;
+    }
+
+    .ft-tagline {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--crimson);
+    }
+
+    .ft-legal {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .ft-legal a {
+      color: #777;
+      font-size: .72rem;
+      transition: color .2s;
+    }
+
+    .ft-legal a:hover {
+      color: var(--crimson);
+    }
+
+    /* BACK TO TOP */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 500;
+      width: 46px;
+      height: 46px;
+      border-radius: var(--r-sm);
+      border: none;
+      background: var(--g-warm);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(192, 57, 43, .35);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all .35s var(--ease);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      transform: translateY(-4px);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--ink);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: var(--r-md);
+      font-size: .88rem;
+      font-weight: 600;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+      border: 1px solid rgba(255, 255, 255, .1);
+      z-index: 1000;
+      transition: transform .4s var(--ease);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 90%;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast-icon {
+      font-size: 1.1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .topbar {
+        display: none;
+      }
+
+      .nav-menu,
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mob-menu {
+        display: block;
+      }
+
+      .section-pad {
+        padding: 70px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .hero-left {
+        align-items: center;
+      }
+
+      .hero-badge {
+        align-self: center;
+      }
+
+      .hero-desc {
+        margin: 0 auto 2rem;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-slider {
+        aspect-ratio: 16/9;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3) {
+        border-right: 1px solid rgba(255, 255, 255, .15);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-card.featured {
+        grid-column: span 2;
+      }
+
+      .about-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .about-visual {
+        padding-bottom: 3rem;
+      }
+
+      .prod-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cb-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ft-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+
+      .section-pad {
+        padding: 55px 0;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+      }
+
+      .hero {
+        padding-top: 74px;
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 50px 0 40px;
+      }
+
+      .hero-h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card.featured {
+        grid-column: span 1;
+      }
+
+      .prod-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cb-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .ft-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .ft-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: .5rem;
+      }
+
+      .ft-legal {
+        justify-content: center;
+      }
+
+      .back-top {
+        bottom: 1.2rem;
+        right: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <!-- <div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <span class="topbar-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.94-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 XXXXX XXXXX
+        </span>
+        <div class="topbar-divider" aria-hidden="true"></div>
+        <span class="topbar-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          info@lenorepharma.com
+        </span>
+        <div class="topbar-divider" aria-hidden="true"></div>
+        <span class="topbar-item">Mon–Sat &nbsp; 9:00 AM – 6:00 PM IST</span>
+      </div>
+      <div class="topbar-right">
+        <a href="#about" class="topbar-link">About</a>
+        <div class="topbar-divider" aria-hidden="true"></div>
+        <a href="#contact" class="topbar-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+  <!-- NAVIGATION -->
+  <nav id="mainNav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo"><img
+            src="data:image/png;base64,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"
+            alt="Lenore Pharmaceuticals Private Limited" style="height:52px;width:auto;object-fit:contain;"></a>
+
+
+
+        <ul class="nav-menu" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Therapeutic Areas</a></li>
+          <li><a href="#product.html">Products</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary" style="font-size:.8rem;padding:.65rem 1.4rem">Enquire Now →</a>
+          <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false"
+            aria-controls="mobMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mobMenu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="mob-header">
+      <div class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="38" y2="38">
+              <stop offset="0%" stop-color="#C0392B" />
+              <stop offset="100%" stop-color="#E8563A" />
+            </linearGradient>
+          </defs>
+          <rect width="38" height="38" rx="10" fill="url(#lg2)" />
+          <path d="M8 28 L19 10 L19 28" fill="rgba(255,255,255,.75)" />
+          <path d="M19 6 L30 20 L19 28" fill="white" />
+          <path d="M19 6 L34 14 L30 20" fill="rgba(255,255,255,.55)" />
+        </svg>
+        <span
+          style="font-family:var(--serif);font-size:1.1rem;font-weight:700;background:var(--g-warm);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Lenore</span>
+      </div>
+      <button class="mob-close" id="mobClose" aria-label="Close navigation menu">✕</button>
+    </div>
+    <div class="mob-body">
+      <ul class="mob-nav" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Therapeutic Areas</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">Why Lenore</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary"
+        style="width:100%;justify-content:center;border-radius:8px;padding:1rem;font-size:.9rem">Enquire Now →</a>
+      <div class="mob-contact-box">
+        <div class="mob-contact-label">Contact Us</div>
+        <div class="mob-contact-val">+91 XXXXX XXXXX</div>
+        <div class="mob-contact-val">info@lenorepharma.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hb-circle c1"></div>
+      <div class="hb-circle c2"></div>
+      <div class="hb-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Copy -->
+          <div class="hero-left">
+            <div class="hero-badge">
+              <div class="hero-badge-dot" aria-hidden="true"></div>
+              Innovating Lives · Cultivating Happiness
+            </div>
+            <h1 class="hero-h1">
+              Advancing<br>
+              <em>Women's Health</em><br>
+              <span class="h1-sub">With Passion &amp; Care</span>
+            </h1>
+            <p class="hero-desc">Lenore Pharmaceuticals brings superior-quality pharmaceutical products to India's
+              healthcare community — with deep expertise in Gynecology &amp; Primary Care and an unwavering commitment
+              to patient outcomes.</p>
+            <div class="hero-actions">
+              <a href="#products" class="btn btn-primary">Explore Our Products →</a>
+              <a href="#contact" class="btn btn-outline">Partner With Us</a>
+            </div>
+          </div>
+          <!-- Slider -->
+          <div class="hero-slider" id="heroSlider">
+            <div class="hs-slide active" data-index="0">
+              <div class="hs-placeholder" aria-hidden="true">🌸</div>
+              <img src="group.jpeg" alt="State-of-the-art pharmaceutical laboratory" loading="eager"
+                onerror="this.style.display='none'">
+              <div class="hs-overlay" aria-hidden="true"></div>
+              <div class="hs-caption">
+                <div class="hs-caption-eyebrow">Gynecology &amp; Women's Health</div>
+                <h3>Innovating Lives By Cultivating Happiness</h3>
+              </div>
+            </div>
+            <div class="hs-slide" data-index="1">
+              <div class="hs-placeholder" aria-hidden="true">🔬</div>
+              <img src="lab.jpg" alt="Medical research and development" loading="lazy"
+                onerror="this.style.display='none'">
+              <div class="hs-overlay" aria-hidden="true"></div>
+              <div class="hs-caption">
+                <div class="hs-caption-eyebrow">Innovation-Led Research</div>
+                <h3>Synergistic Formulations for Better Outcomes</h3>
+              </div>
+            </div>
+            <div class="hs-slide" data-index="2">
+              <div class="hs-placeholder" aria-hidden="true">💊</div>
+              <img src="photo.png" alt="Pharmaceutical product range" loading="lazy"
+                onerror="this.style.display='none'">
+              <div class="hs-overlay" aria-hidden="true"></div>
+              <div class="hs-caption">
+                <div class="hs-caption-eyebrow">Primary Care &amp; General Medicine</div>
+                <h3>Quality Healthcare Accessible to All</h3>
+              </div>
+            </div>
+            <div class="hs-slide" data-index="3">
+              <div class="hs-placeholder" aria-hidden="true">🇮🇳</div>
+              <img src="phot.jpg" alt="Pan-India distribution network" loading="lazy"
+                onerror="this.style.display='none'">
+              <div class="hs-overlay" aria-hidden="true"></div>
+              <div class="hs-caption">
+                <div class="hs-caption-eyebrow">Nationwide Distribution</div>
+                <h3>Serving Patients Across Pan-India</h3>
+              </div>
+            </div>
+            <!-- Dots -->
+            <div class="hs-dots" id="hsDots" role="tablist" aria-label="Slide navigation">
+              <button class="hs-dot active" data-index="0" role="tab" aria-selected="true"
+                aria-label="Slide 1 of 4"></button>
+              <button class="hs-dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2 of 4"></button>
+              <button class="hs-dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3 of 4"></button>
+              <button class="hs-dot" data-index="3" role="tab" aria-selected="false" aria-label="Slide 4 of 4"></button>
+            </div>
+            <!-- Controls -->
+            <div class="hs-controls">
+              <button class="hs-btn" id="hsPrev" aria-label="Previous slide">&#8249;</button>
+              <span class="hs-counter" id="hsCounter" aria-live="polite" aria-atomic="true">1 / 4</span>
+              <button class="hs-btn" id="hsNext" aria-label="Next slide">&#8250;</button>
+            </div>
+            <!-- Progress -->
+            <div class="hs-progress" id="hsProgress" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar" aria-label="Key statistics">
+    <div class="stats-inner">
+      <div class="stat-item"><span class="stat-num">20+</span><span class="stat-lbl">Total Products</span></div>
+      <div class="stat-item"><span class="stat-num">2</span><span class="stat-lbl">Therapy Areas</span></div>
+      <div class="stat-item"><span class="stat-num">PAN India</span><span class="stat-lbl">Distribution Network</span>
+      </div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">Quality Assured</span></div>
+    </div>
+  </div>
+
+  <!---- TICKER ---->
+  <div class="modern-ticker">
+
+    <div class="ticker-track">
+
+      <span>Healthcare Innovation</span>
+      <span>Synergistic Formulations</span>
+      <span>Women's Wellness</span>
+      <span>Evidence-Based Medicine</span>
+      <span>Pan-India Network</span>
+      <span>Gynecology</span>
+
+      <!-- repeat for smooth loop -->
+
+      <span>Healthcare Innovation</span>
+      <span>Synergistic Formulations</span>
+      <span>Women's Wellness</span>
+      <span>Evidence-Based Medicine</span>
+      <span>Pan-India Network</span>
+      <span>Gynecology</span>
+
+    </div>
+
+  </div>
+
+  <!-- THERAPEUTIC AREAS -->
+  <section class="services-sec section-pad" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div>
+          <span class="eyebrow">Therapeutic Focus</span>
+          <h2 class="section-title">Our Areas of <span class="text-brand">Expertise</span></h2>
+          <p class="section-desc">Deep clinical and commercial expertise across key therapeutic categories, with
+            innovative formulations designed for real outcomes.</p>
+        </div>
+        <a href="#contact" class="btn btn-outline" style="flex-shrink:0;align-self:flex-end">Request Catalogue →</a>
+      </div>
+      <div class="services-grid">
+        <div class="service-card featured">
+          <div class="sc-icon" aria-hidden="true">🌸</div>
+          <h3 class="sc-title">Gynecology &amp; Women's Health</h3>
+          <p class="sc-desc">Our flagship therapeutic area — a comprehensive range addressing women's health across the
+            lifecycle. From hormonal therapies and PCOS management to prenatal nutrition, we offer specialized solutions
+            that healthcare professionals trust for consistent, evidence-based outcomes.</p>
+          <div class="sc-tags">
+            <span class="tag">Hormonal Therapy</span>
+            <span class="tag">Prenatal Nutrition</span>
+            <span class="tag">Reproductive Health</span>
+            <span class="tag">PCOS Management</span>
+            <span class="tag">Women's Wellness</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon" aria-hidden="true">💊</div>
+          <h3 class="sc-title">Primary Care</h3>
+          <p class="sc-desc">Broad-spectrum formulations for critical health conditions, designed for the general
+            practitioner with patient compliance in mind.</p>
+          <div class="sc-tags"><span class="tag">General Medicine</span><span class="tag">Multivitamins</span></div>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon" aria-hidden="true">🔬</div>
+          <h3 class="sc-title">Synergistic Combinations</h3>
+          <p class="sc-desc">Pioneering combination formulations that leverage ingredient synergy for superior clinical
+            outcomes and better patient compliance.</p>
+          <div class="sc-tags"><span class="tag">Innovation-Led</span></div>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon" aria-hidden="true">💎</div>
+          <h3 class="sc-title">Generic Portfolio</h3>
+          <p class="sc-desc">High-quality generic products making effective treatment accessible without compromising on
+            standards, efficacy, or patient safety.</p>
+          <div class="sc-tags"><span class="tag">Affordable</span><span class="tag">Quality</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-sec section-pad" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="mission-card">
+            <div class="mission-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true">
+                <path d="M4 28L16 8V28" fill="rgba(255,255,255,.8)" />
+                <path d="M16 4L28 18L16 28" fill="white" />
+                <path d="M16 4L30 12L28 18" fill="rgba(255,255,255,.55)" />
+              </svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To commercialize unique generic products and pioneering synergistic combinations that deliver real health
+              outcomes — especially for women across India's diverse healthcare landscape.</p>
+            <div class="mission-list">
+              <div class="mission-item">
+                <div class="mission-item-dot" aria-hidden="true"></div>Superior quality at competitive pricing
+              </div>
+              <div class="mission-item">
+                <div class="mission-item-dot" aria-hidden="true"></div>Proven marketing &amp; sales expertise
+              </div>
+              <div class="mission-item">
+                <div class="mission-item-dot" aria-hidden="true"></div>Deep Indian market experience
+              </div>
+              <div class="mission-item">
+                <div class="mission-item-dot" aria-hidden="true"></div>Patient-centric product development
+              </div>
+            </div>
+          </div>
+          <div class="about-badge"><span class="badge-num">20+</span><span class="badge-lbl">Products</span></div>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow">Who We Are</span>
+          <h2 class="section-title">Passionate Team <span class="text-brand">Serving India's</span> Healthcare</h2>
+          <p class="section-desc">Lenore Pharmaceuticals endeavours to commercialize &amp; differentiate pharmaceutical
+            products of superior quality at competitive prices. With our proven marketing and sales know-how, strong
+            expertise across key therapeutic categories, and deep experience in the Indian market, we strive to serve
+            the healthcare industry for cure.</p>
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-icon" aria-hidden="true">🎯</div>
+              <div>
+                <div class="value-title">Differentiated Portfolio</div>
+                <div class="value-desc">Unique generic and pioneering synergistic combination products across key
+                  therapeutic categories.</div>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon" aria-hidden="true">📈</div>
+              <div>
+                <div class="value-title">Strong Market Expertise</div>
+                <div class="value-desc">Proven marketing and sales know-how built on years of deep Indian market
+                  experience.</div>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon" aria-hidden="true">🤝</div>
+              <div>
+                <div class="value-title">Patient-Centric Approach</div>
+                <div class="value-desc">Every product decision is guided by patient outcomes and healthcare
+                  accessibility.</div>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon" aria-hidden="true">✅</div>
+              <div>
+                <div class="value-title">Quality Assurance</div>
+                <div class="value-desc">Rigorous standards maintained across our entire product portfolio — no
+                  compromises.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-sec section-pad" id="products">
+    <div class="container">
+      <div class="products-header">
+        <div>
+          <span class="eyebrow">Product Portfolio</span>
+          <h2 class="section-title">20+ Products Across <span class="text-brand">Key Categories</span></h2>
+          <p class="section-desc">Carefully selected formulations that address real clinical needs and deliver
+            measurable, evidence-based results.</p>
+        </div>
+        <a href="#contact" class="btn btn-outline" style="flex-shrink:0;align-self:flex-end">Request Catalogue →</a>
+      </div>
+      <div class="prod-filter" id="prodFilter" role="group" aria-label="Filter products by category">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="gynecology">Gynecology</button>
+        <button class="filter-btn" data-filter="primary">Primary Care</button>
+      </div>
+      <div class="prod-grid" id="prodGrid">
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Progesterone SR 300mg</div>
+          <div class="prod-desc">Sustained-release progesterone for luteal phase support and ART cycles.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Folic Acid + Iron Combo</div>
+          <div class="prod-desc">Essential prenatal nutritional combination for healthy pregnancy outcomes.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Dydrogesterone 10mg</div>
+          <div class="prod-desc">Progestogen therapy for menstrual irregularities and hormonal support.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Myo-Inositol Sachets</div>
+          <div class="prod-desc">PCOS management with myo-inositol and D-chiro-inositol combination.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">CoQ10 + Lycopene</div>
+          <div class="prod-desc">Antioxidant combination for reproductive health and egg quality.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Vitamin D3 60,000 IU</div>
+          <div class="prod-desc">High-potency Vitamin D3 supplement for deficiency correction in women.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Clomiphene Citrate 50mg</div>
+          <div class="prod-desc">Ovulation induction therapy for anovulatory infertility management.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="gynecology">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">🌸 Gynecology</div>
+          <div class="prod-name">Omega-3 + DHA Capsules</div>
+          <div class="prod-desc">Premium omega-3 fatty acids for maternal and fetal brain development.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="primary">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">💊 Primary Care</div>
+          <div class="prod-name">Multivitamin Forte</div>
+          <div class="prod-desc">Comprehensive daily multivitamin and mineral supplement for overall health.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="primary">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">💊 Primary Care</div>
+          <div class="prod-name">Calcium + Magnesium</div>
+          <div class="prod-desc">Bone health combination with optimal calcium-to-magnesium ratio.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="primary">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">💊 Primary Care</div>
+          <div class="prod-name">Methylcobalamin 1500mcg</div>
+          <div class="prod-desc">Active B12 for neuropathy management and energy metabolism support.</div><span
+            class="prod-badge">Available</span>
+        </div>
+        <div class="prod-card" data-category="primary">
+          <div class="prod-card-accent" aria-hidden="true"></div>
+          <div class="prod-cat">💊 Primary Care</div>
+          <div class="prod-name">Zinc + Selenium</div>
+          <div class="prod-desc">Immune-boosting trace element combination for general health maintenance.</div><span
+            class="prod-badge">Available</span>
+        </div>
+      </div>
+      <div class="prod-cta"><a href="product.html" class="btn btn-primary">For Full Product Catalogue →</a></div>
+    </div>
+  </section>
+
+  <!-- COMMITMENT BANNER -->
+  <section class="commitment-banner">
+    <div class="cb-blob a" aria-hidden="true"></div>
+    <div class="cb-blob b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cb-inner">
+        <div class="cb-left">
+          <div class="cb-pill">Our Commitment</div>
+          <h2>Cultivating Happiness Through Better Health</h2>
+          <p>We focus on commercializing unique generic products and pioneering synergistic combination products in
+            Gynecology &amp; Primary Care — delivering real value to patients and healthcare professionals across India.
+          </p>
+          <a href="#contact" class="btn btn-ghost">Partner With Us →</a>
+        </div>
+        <div class="cb-cards">
+          <div class="cb-card"><span class="cb-card-icon" aria-hidden="true">🌸</span>
+            <div class="cb-card-title">Women's Health First</div>
+            <div class="cb-card-desc">Specialized gynecology portfolio designed for real clinical outcomes.</div>
+          </div>
+          <div class="cb-card"><span class="cb-card-icon" aria-hidden="true">🔬</span>
+            <div class="cb-card-title">Innovation Driven</div>
+            <div class="cb-card-desc">Pioneering synergistic combinations that set new treatment standards.</div>
+          </div>
+          <div class="cb-card"><span class="cb-card-icon" aria-hidden="true">✅</span>
+            <div class="cb-card-title">Quality Assured</div>
+            <div class="cb-card-desc">Rigorous QC protocols with no compromise on safety or efficacy.</div>
+          </div>
+          <div class="cb-card"><span class="cb-card-icon" aria-hidden="true">🇮🇳</span>
+            <div class="cb-card-title">Pan-India Network</div>
+            <div class="cb-card-desc">Strong distribution ensuring reach across India's entire healthcare system.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why-sec section-pad" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <span class="eyebrow">Our Advantage</span>
+          <h2 class="section-title">Why Healthcare Professionals <span class="text-brand">Choose Lenore</span></h2>
+          <p class="section-desc">Built on deep expertise, transparency, and an uncompromising commitment to patient
+            outcomes.</p>
+          <div class="features-grid">
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">🏆</span>
+              <div class="feat-title">Superior Quality</div>
+              <div class="feat-desc">Products manufactured to the highest pharmaceutical standards with rigorous QC at
+                every step.</div>
+            </div>
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">💰</span>
+              <div class="feat-title">Competitive Pricing</div>
+              <div class="feat-desc">Quality healthcare made accessible without compromising formulation integrity or
+                patient safety.</div>
+            </div>
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">🧑‍⚕️</span>
+              <div class="feat-title">Expert Team</div>
+              <div class="feat-desc">Passionate professionals with deep clinical and commercial pharmaceutical
+                expertise.</div>
+            </div>
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">🔬</span>
+              <div class="feat-title">Innovation Focus</div>
+              <div class="feat-desc">Continually developing unique combinations that address unmet clinical needs.</div>
+            </div>
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">🌐</span>
+              <div class="feat-title">Pan-India Reach</div>
+              <div class="feat-desc">Strong distribution network ensuring product availability across the entire
+                country.</div>
+            </div>
+            <div class="feat-card"><span class="feat-icon" aria-hidden="true">💕</span>
+              <div class="feat-title">Patient-Centric</div>
+              <div class="feat-desc">Every decision guided by patient outcomes and genuine care for women's health.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-promise">
+          <span class="wp-eyebrow">Our Promise</span>
+          <h3>Trusted Partner to Healthcare Professionals</h3>
+          <p>Every product we bring to market is chosen with one purpose — to make a meaningful difference in the health
+            and lives of patients across India.</p>
+          <div class="promise-list">
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Rigorous quality control at every step
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Transparent and ethical business practices
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Continuous product development &amp; innovation
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Strong post-sales &amp; medical information support
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Responsive healthcare professional support team
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>Dedicated to women's health &amp; wellbeing
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-sec" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="eyebrow" style="justify-content:center">Testimonials</span>
+        <h2 class="section-title">Trusted by Healthcare <span class="text-brand">Professionals</span></h2>
+        <p class="section-desc" style="margin:0 auto;text-align:center">What doctors and healthcare providers across
+          India say about Lenore Pharmaceuticals.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><span class="quote-mark">"</span>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote-text">Lenore's progesterone formulations have consistently delivered excellent clinical
+            outcomes for my patients. The quality and reliability are outstanding.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">P</div>
+            <div>
+              <div class="author-name">Dr. Priya Sharma</div>
+              <div class="author-role">Gynecologist, Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card"><span class="quote-mark">"</span>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote-text">The myo-inositol formulation for PCOS management is remarkable. My patients have shown
+            significant improvement in hormonal balance and overall wellbeing.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="author-name">Dr. Anita Verma</div>
+              <div class="author-role">Reproductive Endocrinologist, Delhi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card"><span class="quote-mark">"</span>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote-text">Excellent product range with competitive pricing. Lenore has become my go-to
+            pharmaceutical partner for women's health prescriptions across my practice.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">S</div>
+            <div>
+              <div class="author-name">Dr. Sunita Rao</div>
+              <div class="author-role">Obstetrician, Bangalore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sec">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="tag" style="margin-bottom:1.5rem;display:inline-flex">Get Started Today</span>
+        <h2 class="section-title">Ready to Partner with <span class="text-brand">Lenore Pharmaceuticals?</span></h2>
+        <p class="section-desc" style="margin:0 auto 2.5rem">Whether you're a healthcare professional, distributor, or
+          institutional partner — we'd love to explore how we can work together to serve patients better.</p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-primary">Enquire Now →</a>
+          <a href="#products" class="btn btn-outline">View Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-sec section-pad" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Let's Talk About Your Healthcare Needs</h2>
+          <p>Reach out for product information, distribution partnerships, medical information, or any other enquiries.
+            Our dedicated team responds within 24 business hours.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact-label">Registered Office</div>
+                <div class="contact-value">Lenore Pharmaceuticals Private Limited, India</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📞</div>
+              <div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value"><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">✉️</div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:info@lenorepharma.com">info@lenorepharma.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">🕐</div>
+              <div>
+                <div class="contact-label">Business Hours</div>
+                <div class="contact-value">Monday – Saturday: 9:00 AM – 6:00 PM IST</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-title">Send Us a Message</div>
+          <div class="form-subtitle">We'll get back to you within 24 business hours.</div>
+          <form action="https://formsubmit.co/indiannobody64@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Enquiry - Lenore Pharma">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+    
+            <div class="form-row">
+              <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName"
+                  name="firstName" placeholder="Dr. Priya" required autocomplete="given-name"></div>
+              <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName"
+                  name="lastName" placeholder="Sharma" required autocomplete="family-name"></div>
+            </div>
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email"
+                name="email" placeholder="doctor@hospital.com" required autocomplete="email"></div>
+            <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"
+                placeholder="+91 98765 43210" autocomplete="tel"></div>
+            <div class="form-group">
+              <label for="enquiryType">Enquiry Type</label>
+              <select id="enquiryType" name="enquiryType">
+                <option value="">Select enquiry type</option>
+                <option value="product">Product Information</option>
+                <option value="distribution">Distribution Partnership</option>
+                <option value="medical">Medical Information</option>
+                <option value="sample">Sample Request</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="message">Your Message *</label><textarea id="message" name="message"
+                placeholder="Tell us about your requirements or ask any question..." required></textarea></div>
+            <button type="submit" class="form-submit"><span id="submitText">Submit Enquiry</span><span
+                aria-hidden="true">→</span></button>
+            <p class="form-note">By submitting this form, you agree to our privacy policy. We never share your
+              information with third parties.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="successPopup" class="popup">
+    <div class="popup-box">
+      <div class="popup-icon">✓</div>
+      <h3>Message Sent!</h3>
+      <p>Thank you for contacting us. We'll get back to you soon.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="ft-top">
+        <div class="ft-brand">
+          <a href="#" class="nav-logo"><img
+              src="data:image/png;base64,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"
+              alt="Lenore Pharmaceuticals Private Limited" style="height:52px;width:auto;object-fit:contain;"></a>
+
+          <p>Innovating lives by cultivating happiness — through superior pharmaceutical products that make quality
+            healthcare accessible across India.</p>
+          <div class="ft-socials">
+            <a href="#" class="ft-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="ft-social" aria-label="Twitter / X">tw</a>
+            <a href="#" class="ft-social" aria-label="Facebook">fb</a>
+          </div>
+        </div>
+        <div class="ft-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Therapeutic Areas</a></li>
+            <li><a href="#products">Our Products</a></li>
+            <li><a href="#why">Why Lenore</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Gynecology Range</a></li>
+            <li><a href="#products">Primary Care</a></li>
+            <li><a href="#products">Synergistic Combos</a></li>
+            <li><a href="#contact">Request Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Partner With Us</a></li>
+            <li><a href="#contact">Medical Enquiries</a></li>
+            <li><a href="#contact">Distribution</a></li>
+            <li><a href="#contact">Sample Request</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <p class="ft-copy">© 2024 Lenore Pharmaceuticals Private Limited. All rights reserved.</p>
+        <p class="ft-tagline">Innovating Lives · Cultivating Happiness</p>
+        <div class="ft-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Scroll back to top">↑</button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" aria-hidden="true">✓</span>
+    <span id="toastMsg">Enquiry submitted successfully!</span>
+  </div>
+
+  <script>
+    'use strict';
+
+    /* Hero Slider */
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.hs-slide'));
+      const dots = Array.from(document.querySelectorAll('.hs-dot'));
+      const counter = document.getElementById('hsCounter');
+      const progress = document.getElementById('hsProgress');
+      const slider = document.getElementById('heroSlider');
+      const INTERVAL = 5000;
+      let current = 0, timer = null;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = ((n % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+        if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+        resetProgress();
+      }
+
+      function resetProgress() {
+        if (!progress) return;
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          progress.style.transition = 'width ' + INTERVAL + 'ms linear';
+          progress.style.width = '100%';
+        }));
+      }
+
+      function startAuto() { timer = setInterval(() => goTo(current + 1), INTERVAL); }
+      function stopAuto() { clearInterval(timer); }
+
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); stopAuto(); startAuto(); }));
+      document.getElementById('hsPrev').addEventListener('click', () => { goTo(current - 1); stopAuto(); startAuto(); });
+      document.getElementById('hsNext').addEventListener('click', () => { goTo(current + 1); stopAuto(); startAuto(); });
+
+      if (slider) {
+        slider.addEventListener('mouseenter', stopAuto);
+        slider.addEventListener('mouseleave', () => { stopAuto(); startAuto(); });
+        let tx = 0;
+        slider.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+        slider.addEventListener('touchend', e => {
+          const diff = tx - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 44) { goTo(current + (diff > 0 ? 1 : -1)); stopAuto(); startAuto(); }
+        }, { passive: true });
+      }
+
+      resetProgress();
+      startAuto();
+    })();
+
+    /* Product Filter */
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.prod-card');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          cards.forEach(card => {
+            card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+          });
+        });
+      });
+    })();
+
+    /* Mobile Menu */
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const mobMenu = document.getElementById('mobMenu');
+      const mobClose = document.getElementById('mobClose');
+
+      function openMenu() {
+        mobMenu.classList.add('open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        mobMenu.classList.remove('open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', () => { mobMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+      mobClose.addEventListener('click', closeMenu);
+      mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('click', e => {
+        if (mobMenu.classList.contains('open') && !mobMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    })();
+
+    /* Sticky Nav */
+    (function () {
+      const nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    })();
+
+    /* Back To Top */
+    (function () {
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    })();
+
+    /* Active Nav Link via IntersectionObserver */
+    (function () {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          }
+        });
+      }, { threshold: 0.35 });
+      sections.forEach(s => obs.observe(s));
+    })();
+
+    /* Contact Form */
+    // (function () {
+    //   const form = document.getElementById('contactForm');
+    //   const submitBtn = form.querySelector('.form-submit');
+    //   const submitText = document.getElementById('submitText');
+    //   const toast = document.getElementById('toast');
+    //   const toastMsg = document.getElementById('toastMsg');
+    //   let toastTimer = null;
+
+    //       function showToast(msg, success) {
+    //         toastMsg.textContent = msg;
+    //         toast.querySelector('.toast-icon').textContent = success ? '✓' : '⚠';
+    //         toast.classList.add('show');
+    //         clearTimeout(toastTimer);
+    //         toastTimer = setTimeout(() => toast.classList.remove('show'), 4500);
+    //       }
+
+    //       function validate() {
+    //         const first = document.getElementById('firstName').value.trim();
+    //         const last = document.getElementById('lastName').value.trim();
+    //         const email = document.getElementById('email').value.trim();
+    //         const message = document.getElementById('message').value.trim();
+    //         if (!first || !last) { showToast('Please enter your full name.', false); return false; }
+    //         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email address.', false); return false; }
+    //         if (!message) { showToast('Please include a message.', false); return false; }
+    //         return true;
+    //       }
+
+    //       form.addEventListener('submit', e => {
+    //         e.preventDefault();
+    //         if (!validate()) return;
+    //         submitBtn.disabled = true;
+    //         submitText.textContent = 'Sending…';
+    //         setTimeout(() => {
+    //           submitBtn.disabled = false;
+    //           submitText.textContent = 'Submit Enquiry';
+    //           form.reset();
+    //           showToast('Thank you! Our team will contact you within 24 business hours.', true);
+    //         }, 1400);
+    //       });
+    //     })();
+
+    const form = document.querySelector("form");
+    const popup = document.getElementById("successPopup");
+
+    form.addEventListener("submit", function () {
+      setTimeout(() => {
+        popup.classList.add("active");
+      }, 500);
+    });
+
+    function closePopup() {
+      popup.classList.remove("active");
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogue — Lenore Pharmaceuticals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #E10600;
+            --red-dark: #A50000;
+            --gold: #D4900A;
+            --gold-light: #F2C84B;
+            --ink: #0E0E0E;
+            --ink-70: #2C2C2C;
+            --ink-50: #5A5A5A;
+            --ink-30: #909090;
+            --ink-10: #EBEBEB;
+            --surface: #F8F7F4;
+            --white: #fff;
+            --blush: #FFF1F0;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --sh-md: 0 8px 32px rgba(225, 6, 0, .12);
+            --sh-lg: 0 20px 64px rgba(225, 6, 0, .16);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+            --r: 14px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--surface);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--sans);
+            border: none;
+            outline: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--red), var(--gold));
+            border-radius: 4px;
+        }
+
+        /* HEADER */
+        .hdr {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--ink-10);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .05);
+        }
+
+        .hdr-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--red), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-mark svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .brand-name {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-sub {
+            font-size: .48rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--ink-30);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: .78rem;
+            font-weight: 700;
+            color: var(--red);
+            padding: .48rem 1.15rem;
+            border-radius: 50px;
+            border: 1.5px solid rgba(225, 6, 0, .25);
+            transition: all .22s;
+            letter-spacing: .02em;
+        }
+
+        .back-btn:hover {
+            background: var(--blush);
+            border-color: var(--red);
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--ink);
+            padding: 90px 2rem 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        .hb-a {
+            width: 500px;
+            height: 500px;
+            background: rgba(225, 6, 0, .18);
+            top: -20%;
+            right: -8%;
+        }
+
+        .hb-b {
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 144, 10, .12);
+            bottom: -20%;
+            left: -5%;
+        }
+
+        .hero-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, .05) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: rgba(255, 255, 255, .75);
+            padding: .38rem 1rem;
+            border-radius: 50px;
+            font-family: var(--mono);
+            font-size: .6rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 1.4rem;
+        }
+
+        .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold-light);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .4;
+                transform: scale(1.6);
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.08;
+            margin-bottom: .9rem;
+        }
+
+        .hero h1 em {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .hero-desc {
+            font-size: .96rem;
+            color: rgba(255, 255, 255, .55);
+            max-width: 520px;
+            margin: 0 auto 2.8rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hs-item {
+            text-align: center;
+        }
+
+        .hs-n {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            display: block;
+        }
+
+        .hs-l {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .4);
+            margin-top: .3rem;
+            display: block;
+        }
+
+        /* FILTER BAR */
+        .fbar {
+            background: #fff;
+            border-bottom: 1px solid var(--ink-10);
+            position: sticky;
+            top: 68px;
+            z-index: 800;
+        }
+
+        .fbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            height: 56px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .fbar-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .fb {
+            flex-shrink: 0;
+            padding: .38rem 1rem;
+            border-radius: 50px;
+            background: #fff;
+            border: 1.5px solid var(--ink-10);
+            color: var(--ink-50);
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            cursor: pointer;
+            transition: all .2s;
+            white-space: nowrap;
+        }
+
+        .fb.on,
+        .fb:hover {
+            background: var(--blush);
+            border-color: rgba(225, 6, 0, .3);
+            color: var(--red);
+        }
+
+        .fsep {
+            width: 1px;
+            height: 22px;
+            background: var(--ink-10);
+            flex-shrink: 0;
+        }
+
+        .fcount {
+            margin-left: auto;
+            flex-shrink: 0;
+            font-family: var(--mono);
+            font-size: .62rem;
+            color: var(--ink-30);
+            letter-spacing: .1em;
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 56px 2rem 100px;
+        }
+
+        /* SECTION HEADER */
+        .csec {
+            margin-bottom: 64px;
+        }
+
+        .csec.hidden {
+            display: none;
+        }
+
+        .chead {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .clabel {
+            font-family: var(--mono);
+            font-size: .62rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--red);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .cline {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(225, 6, 0, .18), transparent);
+        }
+
+        .ccount {
+            font-family: var(--mono);
+            font-size: .6rem;
+            color: var(--ink-30);
+            letter-spacing: .1em;
+        }
+
+        /* PRODUCT GRID */
+        .pg {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* PRODUCT IMAGE */
+        .pc-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .pc-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.08);
+            transition: transform .6s ease;
+        }
+
+        /* HOVER ZOOM */
+        .pc:hover .pc-img img {
+            transform: scale(1);
+        }
+
+        /* DARK OVERLAY */
+        .pc-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, .75));
+            z-index: 1;
+        }
+
+        /* MAKE TEXT ABOVE IMAGE */
+        .pc-top * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* TEXT COLOR FIX */
+        .pc-name {
+            color: #fff !important;
+        }
+
+        .pc-formula {
+            color: rgba(255, 255, 255, .75) !important;
+        }
+
+        .pc-badge {
+            background: rgba(255, 255, 255, .1) !important;
+            color: #fff !important;
+            border-color: rgba(255, 255, 255, .2) !important;
+        }
+
+        /* PRODUCT CARD */
+        .pc {
+            background: #fff;
+            border-radius: var(--r);
+            border: 1.5px solid var(--ink-10);
+            overflow: hidden;
+            position: relative;
+            transition: all .32s var(--ease);
+            cursor: pointer;
+        }
+
+        .pc:hover {
+            box-shadow: var(--sh-lg);
+            transform: translateY(-5px);
+            border-color: rgba(225, 6, 0, .15);
+        }
+
+        .pc::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .32s var(--ease);
+        }
+
+        .pc:hover::after {
+            transform: scaleX(1);
+        }
+
+        .pc.hidden {
+            display: none;
+        }
+
+        .pc.wide {
+            grid-column: span 2;
+        }
+
+        .pc.wide .pc-top {
+            min-height: 140px;
+        }
+
+        .pc.wide .pc-name {
+            font-size: 1.55rem;
+        }
+
+        .pc {
+            transition: all .4s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .pc:hover {
+            transform: translateY(-8px) scale(1.01);
+        }
+
+        /* CARD TOP */
+        .pc-top {
+            padding: 22px 22px 18px;
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+        }
+
+        .pc-bg {
+            position: absolute;
+            inset: 0;
+            opacity: .08;
+            transition: opacity .3s;
+        }
+
+        .pc:hover .pc-bg {
+            opacity: .12;
+        }
+
+        .pc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--mono);
+            font-size: .56rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: .22rem .7rem;
+            border-radius: 50px;
+            position: relative;
+            z-index: 1;
+            border: 1px solid;
+        }
+
+        .pc-name {
+            font-family: var(--serif);
+            font-size: 1.28rem;
+            font-weight: 700;
+            line-height: 1.15;
+            position: relative;
+            z-index: 1;
+            margin-top: .45rem;
+        }
+
+        .pc-formula {
+            font-family: var(--mono);
+            font-size: .55rem;
+            color: var(--ink-30);
+            letter-spacing: .03em;
+            margin-top: .28rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5;
+        }
+
+        /* CARD BODY */
+        .pc-body {
+            padding: 20px 22px 22px;
+        }
+
+        .pc-tagline {
+            font-size: .84rem;
+            font-weight: 700;
+            color: var(--ink-70);
+            margin-bottom: .6rem;
+            line-height: 1.35;
+        }
+
+        .pc-desc {
+            font-size: .8rem;
+            line-height: 1.8;
+            color: var(--ink-50);
+            margin-bottom: 1rem;
+        }
+
+        .pc-feats {
+            display: flex;
+            flex-direction: column;
+            gap: .38rem;
+            margin-bottom: 1rem;
+        }
+
+        .pf {
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem;
+            font-size: .78rem;
+            color: var(--ink-50);
+            line-height: 1.5;
+        }
+
+        .pf-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: .42rem;
+        }
+
+        .pc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3rem;
+        }
+
+        .pt {
+            padding: .18rem .6rem;
+            border-radius: 50px;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            border: 1px solid;
+        }
+
+        /* CARD FOOTER */
+        .pc-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-top: 1px solid var(--ink-10);
+            background: var(--surface);
+        }
+
+        .pc-type {
+            font-family: var(--mono);
+            font-size: .57rem;
+            color: var(--ink-30);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .pc-avail {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--mono);
+            font-size: .58rem;
+            font-weight: 500;
+            color: #1a7a3c;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .pc-avail::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #1a7a3c;
+            flex-shrink: 0;
+            animation: ping 2.2s ease-in-out infinite;
+        }
+
+        @keyframes ping {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.7);
+                opacity: .45;
+            }
+        }
+
+        /* COLOUR THEMES */
+        .t-gyn .pc-bg {
+            background: linear-gradient(135deg, #C8102E, #FF6B8A);
+        }
+
+        .t-gyn .pc-badge {
+            background: rgba(200, 16, 46, .1);
+            color: #9A0024;
+            border-color: rgba(200, 16, 46, .18);
+        }
+
+        .t-gyn .pc-name {
+            color: #7A0020;
+        }
+
+        .t-gyn .pf-dot {
+            background: #C8102E;
+        }
+
+        .t-gyn .pt {
+            background: rgba(200, 16, 46, .07);
+            color: #9A0024;
+            border-color: rgba(200, 16, 46, .18);
+        }
+
+        .t-men .pc-bg {
+            background: linear-gradient(135deg, #9C004A, #E8206C);
+        }
+
+        .t-men .pc-badge {
+            background: rgba(156, 0, 74, .1);
+            color: #9C004A;
+            border-color: rgba(156, 0, 74, .18);
+        }
+
+        .t-men .pc-name {
+            color: #65002F;
+        }
+
+        .t-men .pf-dot {
+            background: #9C004A;
+        }
+
+        .t-men .pt {
+            background: rgba(156, 0, 74, .07);
+            color: #9C004A;
+            border-color: rgba(156, 0, 74, .18);
+        }
+
+        .t-uter .pc-bg {
+            background: linear-gradient(135deg, #A0004A, #E8397A);
+        }
+
+        .t-uter .pc-badge {
+            background: rgba(160, 0, 74, .1);
+            color: #800038;
+            border-color: rgba(160, 0, 74, .18);
+        }
+
+        .t-uter .pc-name {
+            color: #5C0028;
+        }
+
+        .t-uter .pf-dot {
+            background: #A0004A;
+        }
+
+        .t-uter .pt {
+            background: rgba(160, 0, 74, .07);
+            color: #800038;
+            border-color: rgba(160, 0, 74, .18);
+        }
+
+        .t-dhea .pc-bg {
+            background: linear-gradient(135deg, #06766B, #2EC4B6);
+        }
+
+        .t-dhea .pc-badge {
+            background: rgba(6, 118, 107, .1);
+            color: #064F48;
+            border-color: rgba(6, 118, 107, .18);
+        }
+
+        .t-dhea .pc-name {
+            color: #033E38;
+        }
+
+        .t-dhea .pf-dot {
+            background: #06766B;
+        }
+
+        .t-dhea .pt {
+            background: rgba(6, 118, 107, .07);
+            color: #064F48;
+            border-color: rgba(6, 118, 107, .18);
+        }
+
+        .t-fert .pc-bg {
+            background: linear-gradient(135deg, #1B5E20, #4CAF50);
+        }
+
+        .t-fert .pc-badge {
+            background: rgba(27, 94, 32, .1);
+            color: #1B5E20;
+            border-color: rgba(27, 94, 32, .18);
+        }
+
+        .t-fert .pc-name {
+            color: #0D3B11;
+        }
+
+        .t-fert .pf-dot {
+            background: #1B5E20;
+        }
+
+        .t-fert .pt {
+            background: rgba(27, 94, 32, .07);
+            color: #1B5E20;
+            border-color: rgba(27, 94, 32, .18);
+        }
+
+        .t-pcos .pc-bg {
+            background: linear-gradient(135deg, #5B1E8F, #A85FD8);
+        }
+
+        .t-pcos .pc-badge {
+            background: rgba(91, 30, 143, .1);
+            color: #4A1870;
+            border-color: rgba(91, 30, 143, .18);
+        }
+
+        .t-pcos .pc-name {
+            color: #35124F;
+        }
+
+        .t-pcos .pf-dot {
+            background: #5B1E8F;
+        }
+
+        .t-pcos .pt {
+            background: rgba(91, 30, 143, .07);
+            color: #4A1870;
+            border-color: rgba(91, 30, 143, .18);
+        }
+
+        .t-cerv .pc-bg {
+            background: linear-gradient(135deg, #154DA0, #4A90D9);
+        }
+
+        .t-cerv .pc-badge {
+            background: rgba(21, 77, 160, .1);
+            color: #103878;
+            border-color: rgba(21, 77, 160, .18);
+        }
+
+        .t-cerv .pc-name {
+            color: #0B2B5A;
+        }
+
+        .t-cerv .pf-dot {
+            background: #154DA0;
+        }
+
+        .t-cerv .pt {
+            background: rgba(21, 77, 160, .07);
+            color: #103878;
+            border-color: rgba(21, 77, 160, .18);
+        }
+
+        .t-bone .pc-bg {
+            background: linear-gradient(135deg, #B87A00, #F5C542);
+        }
+
+        .t-bone .pc-badge {
+            background: rgba(184, 122, 0, .1);
+            color: #7A5000;
+            border-color: rgba(184, 122, 0, .18);
+        }
+
+        .t-bone .pc-name {
+            color: #5A3900;
+        }
+
+        .t-bone .pf-dot {
+            background: #B87A00;
+        }
+
+        .t-bone .pt {
+            background: rgba(184, 122, 0, .07);
+            color: #7A5000;
+            border-color: rgba(184, 122, 0, .18);
+        }
+
+        .t-vitd .pc-bg {
+            background: linear-gradient(135deg, #C45000, #FF8C38);
+        }
+
+        .t-vitd .pc-badge {
+            background: rgba(196, 80, 0, .1);
+            color: #8B3800;
+            border-color: rgba(196, 80, 0, .18);
+        }
+
+        .t-vitd .pc-name {
+            color: #622800;
+        }
+
+        .t-vitd .pf-dot {
+            background: #C45000;
+        }
+
+        .t-vitd .pt {
+            background: rgba(196, 80, 0, .07);
+            color: #8B3800;
+            border-color: rgba(196, 80, 0, .18);
+        }
+
+        .t-anti .pc-bg {
+            background: linear-gradient(135deg, #8B5500, #D4900A);
+        }
+
+        .t-anti .pc-badge {
+            background: rgba(139, 85, 0, .1);
+            color: #6B4200;
+            border-color: rgba(139, 85, 0, .18);
+        }
+
+        .t-anti .pc-name {
+            color: #4A2D00;
+        }
+
+        .t-anti .pf-dot {
+            background: #8B5500;
+        }
+
+        .t-anti .pt {
+            background: rgba(139, 85, 0, .07);
+            color: #6B4200;
+            border-color: rgba(139, 85, 0, .18);
+        }
+
+        /* NEW THEMES */
+        .t-nutr .pc-bg {
+            background: linear-gradient(135deg, #4A0072, #8B2FC9);
+        }
+
+        .t-nutr .pc-badge {
+            background: rgba(74, 0, 114, .1);
+            color: #380058;
+            border-color: rgba(74, 0, 114, .18);
+        }
+
+        .t-nutr .pc-name {
+            color: #2A0040;
+        }
+
+        .t-nutr .pf-dot {
+            background: #4A0072;
+        }
+
+        .t-nutr .pt {
+            background: rgba(74, 0, 114, .07);
+            color: #380058;
+            border-color: rgba(74, 0, 114, .18);
+        }
+
+        .t-preg .pc-bg {
+            background: linear-gradient(135deg, #0D47A1, #42A5F5);
+        }
+
+        .t-preg .pc-badge {
+            background: rgba(13, 71, 161, .1);
+            color: #0A3672;
+            border-color: rgba(13, 71, 161, .18);
+        }
+
+        .t-preg .pc-name {
+            color: #07265A;
+        }
+
+        .t-preg .pf-dot {
+            background: #0D47A1;
+        }
+
+        .t-preg .pt {
+            background: rgba(13, 71, 161, .07);
+            color: #0A3672;
+            border-color: rgba(13, 71, 161, .18);
+        }
+
+        .t-liver .pc-bg {
+            background: linear-gradient(135deg, #E65100, #FFB74D);
+        }
+
+        .t-liver .pc-badge {
+            background: rgba(230, 81, 0, .1);
+            color: #BF360C;
+            border-color: rgba(230, 81, 0, .18);
+        }
+
+        .t-liver .pc-name {
+            color: #8D2200;
+        }
+
+        .t-liver .pf-dot {
+            background: #E65100;
+        }
+
+        .t-liver .pt {
+            background: rgba(230, 81, 0, .07);
+            color: #BF360C;
+            border-color: rgba(230, 81, 0, .18);
+        }
+
+        .t-gastro .pc-bg {
+            background: linear-gradient(135deg, #B71C1C, #EF9A9A);
+        }
+
+        .t-gastro .pc-badge {
+            background: rgba(183, 28, 28, .1);
+            color: #7F0000;
+            border-color: rgba(183, 28, 28, .18);
+        }
+
+        .t-gastro .pc-name {
+            color: #5C0000;
+        }
+
+        .t-gastro .pf-dot {
+            background: #B71C1C;
+        }
+
+        .t-gastro .pt {
+            background: rgba(183, 28, 28, .07);
+            color: #7F0000;
+            border-color: rgba(183, 28, 28, .18);
+        }
+
+        .t-nausea .pc-bg {
+            background: linear-gradient(135deg, #00695C, #80CBC4);
+        }
+
+        .t-nausea .pc-badge {
+            background: rgba(0, 105, 92, .1);
+            color: #004D40;
+            border-color: rgba(0, 105, 92, .18);
+        }
+
+        .t-nausea .pc-name {
+            color: #00352C;
+        }
+
+        .t-nausea .pf-dot {
+            background: #00695C;
+        }
+
+        .t-nausea .pt {
+            background: rgba(0, 105, 92, .07);
+            color: #004D40;
+            border-color: rgba(0, 105, 92, .18);
+        }
+
+        .t-pain .pc-bg {
+            background: linear-gradient(135deg, #880E4F, #F48FB1);
+        }
+
+        .t-pain .pc-badge {
+            background: rgba(136, 14, 79, .1);
+            color: #560027;
+            border-color: rgba(136, 14, 79, .18);
+        }
+
+        .t-pain .pc-name {
+            color: #3E001C;
+        }
+
+        .t-pain .pf-dot {
+            background: #880E4F;
+        }
+
+        .t-pain .pt {
+            background: rgba(136, 14, 79, .07);
+            color: #560027;
+            border-color: rgba(136, 14, 79, .18);
+        }
+
+        .t-abx .pc-bg {
+            background: linear-gradient(135deg, #1B5E20, #81C784);
+        }
+
+        .t-abx .pc-badge {
+            background: rgba(27, 94, 32, .1);
+            color: #1B5E20;
+            border-color: rgba(27, 94, 32, .18);
+        }
+
+        .t-abx .pc-name {
+            color: #0D3B11;
+        }
+
+        .t-abx .pf-dot {
+            background: #1B5E20;
+        }
+
+        .t-abx .pt {
+            background: rgba(27, 94, 32, .07);
+            color: #1B5E20;
+            border-color: rgba(27, 94, 32, .18);
+        }
+
+        /* MODAL */
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .72);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s var(--ease);
+        }
+
+        .modal-bg.on {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 760px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(.92) translateY(24px);
+            transition: transform .35s var(--ease);
+            box-shadow: 0 40px 120px rgba(0, 0, 0, .35);
+        }
+
+        .modal-bg.on .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .modal::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--red), var(--gold));
+        }
+
+        .mclose {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 10;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--blush);
+            border: 1.5px solid rgba(225, 6, 0, .2);
+            color: var(--red);
+            font-size: .9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s;
+            cursor: pointer;
+        }
+
+        .mclose:hover {
+            background: var(--red);
+            color: #fff;
+        }
+
+        .mhdr {
+            padding: 32px 32px 22px;
+            border-bottom: 1px solid var(--ink-10);
+        }
+
+        .mcat {
+            font-family: var(--mono);
+            font-size: .58rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--red);
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .mname {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: .35rem;
+        }
+
+        .mformula {
+            font-family: var(--mono);
+            font-size: .7rem;
+            color: var(--ink-30);
+            margin-bottom: .6rem;
+            line-height: 1.5;
+        }
+
+        .mtagline {
+            font-size: .94rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--red);
+        }
+
+        .mbody {
+            padding: 24px 32px 32px;
+        }
+
+        .mlabel {
+            font-family: var(--mono);
+            font-size: .58rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--ink-30);
+            display: block;
+            margin-bottom: .65rem;
+            margin-top: 1.4rem;
+        }
+
+        .mlabel:first-child {
+            margin-top: 0;
+        }
+
+        .mdesc {
+            font-size: .88rem;
+            line-height: 1.82;
+            color: var(--ink-50);
+        }
+
+        .mfeats {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .mfeat {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            font-size: .84rem;
+            color: var(--ink-50);
+            line-height: 1.62;
+        }
+
+        .mfeat-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--red), var(--gold));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .52rem;
+            font-weight: 900;
+            margin-top: .1rem;
+        }
+
+        .mgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .75rem;
+            margin-bottom: 1rem;
+        }
+
+        .mbox {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid var(--ink-10);
+        }
+
+        .mbox-l {
+            font-family: var(--mono);
+            font-size: .52rem;
+            letter-spacing: .15em;
+            color: var(--ink-30);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: .25rem;
+        }
+
+        .mbox-v {
+            font-weight: 700;
+            font-size: .86rem;
+            color: var(--ink-70);
+        }
+
+        .minds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .38rem;
+        }
+
+        .mind {
+            padding: .25rem .8rem;
+            border-radius: 50px;
+            font-size: .66rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            background: var(--blush);
+            color: var(--red);
+            border: 1px solid rgba(225, 6, 0, .15);
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--ink);
+            padding: 72px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(225, 6, 0, .15), transparent 70%);
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: .7rem;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, .5);
+            font-size: .92rem;
+            line-height: 1.75;
+            margin-bottom: 1.8rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: .82rem 2rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--red), var(--gold));
+            color: #fff;
+            font-size: .86rem;
+            font-weight: 800;
+            letter-spacing: .05em;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 28px rgba(225, 6, 0, .35);
+            transition: all .3s var(--ease);
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 42px rgba(225, 6, 0, .45);
+        }
+
+        /* FOOTER */
+        .pgfoot {
+            background: #fff;
+            border-top: 1px solid var(--ink-10);
+            padding: 24px 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .pgfoot p {
+            font-size: .74rem;
+            color: var(--ink-30);
+        }
+
+        .pgfoot a {
+            color: var(--red);
+            font-weight: 600;
+            font-size: .74rem;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
+            .pg {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pc.wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media(max-width:640px) {
+            .pg {
+                grid-template-columns: 1fr;
+            }
+
+            .pc.wide {
+                grid-column: span 1;
+            }
+
+            .hdr-inner,
+            .fbar-inner,
+            .main,
+            .pgfoot {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+            }
+
+            .mhdr,
+            .mbody {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero {
+                padding: 70px 1.2rem 60px;
+            }
+
+            .mgrid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .brand-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="hdr">
+        <div class="hdr-inner">
+            <div class="brand">
+                <a href="#" class="nav-logo"><img
+                        src="data:image/png;base64,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"
+                        alt="Lenore Pharmaceuticals Private Limited"
+                        style="height:52px;width:auto;object-fit:contain;"></a>
+            </div>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-blob hb-a"></div>
+        <div class="hero-blob hb-b"></div>
+        <div class="hero-dots"></div>
+        <div class="hero-inner">
+            <div class="hero-pill"><span class="pill-dot"></span>Full Product Portfolio — 2024 · 19 Products</div>
+            <h1>Our <em>Pharmaceutical</em><br>Product Catalogue</h1>
+            <p class="hero-desc">Carefully curated, evidence-based formulations across Gynecology &amp; Primary Care —
+                designed for real clinical outcomes and genuine patient wellbeing.</p>
+            <div class="hero-stats">
+                <div class="hs-item"><span class="hs-n">20+</span><span class="hs-l">Products</span></div>
+                <div class="hs-item"><span class="hs-n">6</span><span class="hs-l">Therapy Areas</span></div>
+                <div class="hs-item"><span class="hs-n">PAN India</span><span class="hs-l">Distribution</span></div>
+                <div class="hs-item"><span class="hs-n">100%</span><span class="hs-l">Quality Assured</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="fbar">
+        <div class="fbar-inner">
+            <button class="fb on" data-filter="all">All Products</button>
+            <div class="fsep"></div>
+            <button class="fb" data-filter="gynecology">Gynecology</button>
+            <button class="fb" data-filter="menstrual">Menstrual Health</button>
+            <button class="fb" data-filter="fertility">Fertility &amp; DHEA</button>
+            <button class="fb" data-filter="pcos">PCOS</button>
+            <button class="fb" data-filter="cervical">Cervical Health</button>
+            <button class="fb" data-filter="bone">Bone &amp; Nerve</button>
+            <button class="fb" data-filter="antioxidant">Antioxidant</button>
+            <button class="fb" data-filter="nutrition">Nutrition</button>
+            <button class="fb" data-filter="liver">Liver Health</button>
+            <button class="fb" data-filter="gastro">Gastro</button>
+            <button class="fb" data-filter="pain">Pain Relief</button>
+            <button class="fb" data-filter="antibiotic">Antibiotic</button>
+            <span class="fcount" id="prodCount">19 products</span>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- GYNECOLOGY & HORMONAL -->
+        <section class="csec" id="sec-gyn">
+            <div class="chead">
+                <span class="clabel">🌸 Gynecology &amp; Hormonal Therapy</span>
+                <div class="cline"></div>
+                <span class="ccount">2 products</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-gyn" data-cat="gynecology" onclick="openModal('configest')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="configest.jpg" alt="Configest">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🌸 Gynecology · Flagship</span>
+                        <div class="pc-name">Configest-SR®</div>
+                        <div class="pc-formula">Natural Micronised Progesterone 200 / 300 / 400 mg · Sustained Release
+                            Tablet · Aqueous Base · USFDA Approved</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Confident Support for Every Phase of Womanhood</div>
+                        <div class="pc-desc">Bioidentical sustained-release progesterone achieving stable therapeutic
+                            endometrial concentration (13.9mg/ml). Longer 18-hour half-life enables once-daily dosing.
+                            Aqueous base ensures superior bioavailability and tolerability.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Maintains uterine quiescence — reduces risk of
+                                preterm labour</div>
+                            <div class="pf"><span class="pf-dot"></span>Enhances endometrial receptivity — improves
+                                implantation success</div>
+                            <div class="pf"><span class="pf-dot"></span>Reduces immune rejection of embryo
+                                (immuno-modulatory effect)</div>
+                            <div class="pf"><span class="pf-dot"></span>Improves pregnancy outcomes in recurrent
+                                pregnancy loss</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">LPD</span><span class="pt">LPS</span><span class="pt">ART</span><span
+                                class="pt">BOH</span><span class="pt">Preterm Labour</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">SR Tablet · Once Daily · 18hr Half-life</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+                <div class="pc t-uter" data-cat="gynecology" onclick="openModal('esmyl')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="esmyl.jpg" alt="Esmyl">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🌿 Uterine Tonic</span>
+                        <div class="pc-name">Esmyl</div>
+                        <div class="pc-formula">Saraca Indica 1800mg / 5ml + Honey 500mg / 5ml Syrup — 300ml Monthly
+                            Pack</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Delivers Smile, Naturally</div>
+                        <div class="pc-desc">Complete uterine tonic with the highest concentration of Saraca Indica.
+                            Excellent uterotonic effect for better cycle control. Monthly pack ensures complete therapy
+                            compliance. Superior taste with honey.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Regularises menstrual flow and cycle control
+                            </div>
+                            <div class="pf"><span class="pf-dot"></span>Improves ovarian function naturally</div>
+                            <div class="pf"><span class="pf-dot"></span>Monthly 300ml pack ensures full course
+                                compliance</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Menorrhagia</span><span class="pt">DUB</span><span
+                                class="pt">Metrorrhagia</span><span class="pt">Infertility</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Syrup · 300ml Monthly Pack</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MENSTRUAL HEALTH -->
+        <section class="csec" id="sec-men">
+            <div class="chead">
+                <span class="clabel">🩸 Menstrual Health</span>
+                <div class="cline"></div>
+                <span class="ccount">1 product</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-men" data-cat="menstrual" onclick="openModal('meftm')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="meftm.jpg" alt="MEF-TM™">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🩸 Menstrual Health · Synergistic</span>
+                        <div class="pc-name">MEF-TM™</div>
+                        <div class="pc-formula">Tranexamic Acid 500mg + Mefenamic Acid 250mg Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Comfort, Control, Confidence — Because Every Woman Deserves Easier Days
+                        </div>
+                        <div class="pc-desc">Dual-action non-hormonal combination: Tranexamic Acid stabilises
+                            endometrial clots and reduces menstrual blood loss, while Mefenamic Acid relieves uterine
+                            cramps and reduces inflammation. Together they deliver comprehensive relief — faster onset
+                            and better compliance than single-agent therapy. Fertility-friendly with no hormonal
+                            interference.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Controls heavy bleeding and severe pain
+                                simultaneously in one tablet</div>
+                            <div class="pf"><span class="pf-dot"></span>Non-hormonal and fertility-friendly — safe for
+                                women planning pregnancy</div>
+                            <div class="pf"><span class="pf-dot"></span>Short-course therapy: 3–5 days only, starting at
+                                onset of bleeding/pain</div>
+                            <div class="pf"><span class="pf-dot"></span>Manages IUCD-associated heavy bleeding
+                                effectively</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Menorrhagia</span><span class="pt">Dysmenorrhoea</span><span
+                                class="pt">AUB/DUB</span><span class="pt">IUCD Bleeding</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · 1 tab 2–3×/day · Duration 3–5 days</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FERTILITY & DHEA -->
+        <section class="csec" id="sec-fert">
+            <div class="chead">
+                <span class="clabel">🦋 Fertility &amp; Ovarian Reserve</span>
+                <div class="cline"></div>
+                <span class="ccount">3 products</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-dhea" data-cat="fertility" onclick="openModal('confiova')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="confiova.jpg" alt="Confiova">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🦋 Fertility · DOR · DHEA</span>
+                        <div class="pc-name">Confiova</div>
+                        <div class="pc-formula">Micronised DHEA 25mg + Folic Acid 2.5mg Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">The Confidence Behind Every Conception</div>
+                        <div class="pc-desc">Clinically proven DHEA formulation for declining ovarian reserve.
+                            Pharmacokinetic evidence confirms 25mg TDS maintains stable serum DHEA levels versus 75mg
+                            once-daily which rapidly peaks then crashes. DHEA acts via: Testosterone ↑ → Estrogen ↑ →
+                            Ovarian Reserve ↑; and IGF-1 → Ovulation Induction. As per Centre for Human Reproduction
+                            recommendation.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Improves ovarian reserve markers — AMH and
+                                Antral Follicle Count (AFC)</div>
+                            <div class="pf"><span class="pf-dot"></span>Increases pregnancy and live birth rates in IVF
+                                cycles</div>
+                            <div class="pf"><span class="pf-dot"></span>Enhances egg quality, mitochondrial function —
+                                significantly reduces aneuploidy</div>
+                            <div class="pf"><span class="pf-dot"></span>Supports folliculogenesis, steroidogenesis, and
+                                delays ovarian aging</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">DOR</span><span class="pt">POA</span><span class="pt">POF</span><span
+                                class="pt">Poor Responders</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · 25mg TDS preferred · 3–4 months</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+                <div class="pc t-dhea" data-cat="fertility" onclick="openModal('ovacure')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="ovacure.jpg" alt="OvacureSR">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🍼 Fertility · Motherhood</span>
+                        <div class="pc-name">OvacureSR</div>
+                        <div class="pc-formula">Micronised Dehydroepiandrosterone 75mg SR Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Fulfills the Desire of Motherhood</div>
+                        <div class="pc-desc">Once-daily sustained release DHEA 75mg. Multiple doctor endorsements
+                            confirm real-world conception success stories — transforming infertility journeys into
+                            motherhood.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>SR ensures consistent DHEA plasma levels all day
+                            </div>
+                            <div class="pf"><span class="pf-dot"></span>Enhances egg quality and ovarian reserve</div>
+                            <div class="pf"><span class="pf-dot"></span>Convenient once-daily dosing for better
+                                compliance</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">DOR</span><span class="pt">IVF Support</span><span
+                                class="pt">Infertility</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">SR Tablet · 75mg Once Daily</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+                <div class="pc t-fert" data-cat="fertility" onclick="openModal('nufert')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="nufertf.jpg" alt="Nufert-F">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🌿 Female Fertility · Antioxidant</span>
+                        <div class="pc-name">Nufert-F</div>
+                        <div class="pc-formula">L-Arginine + CoQ10 + Chasteberry + Grape Seed + Folic Acid + NAC +
+                            Inositol + Zinc + Omega-3 Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Countering Oxidative Stress &amp; Supporting Fertility</div>
+                        <div class="pc-desc">9-ingredient antioxidant blend targeting oxidative stress — the common root
+                            of PCOS, endometriosis, unexplained infertility, and ART failure. Folic Acid + Zinc: "Higher
+                            Probability of Pregnancy and Live Birth."</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>L-Arginine improves uterine blood flow &
+                                endometrial receptivity</div>
+                            <div class="pf"><span class="pf-dot"></span>CoQ10 enhances ovulation induction response
+                            </div>
+                            <div class="pf"><span class="pf-dot"></span>Grape Seed Extract prevents ovarian aging</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Female Fertility</span><span class="pt">PCOS</span><span
+                                class="pt">Antioxidant</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · Once Daily</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PCOS -->
+        <section class="csec" id="sec-pcos">
+            <div class="chead">
+                <span class="clabel">💜 PCOS Management</span>
+                <div class="cline"></div>
+                <span class="ccount">1 product</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-pcos" data-cat="pcos" onclick="openModal('nuova')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="nuova.jpg" alt="Nuova">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">💜 PCOS · Insulin Resistance</span>
+                        <div class="pc-name">Nuova</div>
+                        <div class="pc-formula">Myo-Inositol 1.1g + D-Chiro-Inositol 27.6mg + L-Methylfolate 1000mcg +
+                            Vitamin D3 1000IU + Chromium Picolinate 100mcg · Strawberry Flavour Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Clinical Approach for PCOS Management — Better Than Metformin</div>
+                        <div class="pc-desc">Maintains physiological MI:DCI ratio of 40:1. Clinical superiority over
+                            Metformin: 69.3% vs 25.7% weight loss; 46.7% vs 13.6% spontaneous menstruation; 11.6% vs 3%
+                            spontaneous pregnancies. Chromium Picolinate addresses hyperinsulinemia — the underlying
+                            cause. Strawberry flavour ensures palatability and adherence.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Improves oocyte and embryo quality — increases
+                                pregnancy rate</div>
+                            <div class="pf"><span class="pf-dot"></span>Increases SHBG, lowers free androgens, restores
+                                ovulation</div>
+                            <div class="pf"><span class="pf-dot"></span>Restores normal insulin sensitivity; improves
+                                endocrine parameters</div>
+                            <div class="pf"><span class="pf-dot"></span>Better tolerated than Metformin with far fewer
+                                side effects</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">PCOS</span><span class="pt">Insulin Resistance</span><span
+                                class="pt">Anovulation</span><span class="pt">Infertility</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · 1–2/day · 3–4 months · Strawberry Flavour</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERVICAL HEALTH -->
+        <section class="csec" id="sec-cerv">
+            <div class="chead">
+                <span class="clabel">🛡️ Cervical Health &amp; HPV Protection</span>
+                <div class="cline"></div>
+                <span class="ccount">1 product</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-cerv" data-cat="cervical" onclick="openModal('cervi')">
+                    <div class="pc-top">
+                        <div class="pc-img">
+                            <img src="cerviprotek.jpg" alt="CerviProtek®">
+                        </div>
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🛡️ Cervical Health · HPV</span>
+                        <div class="pc-name">CerviProtek®</div>
+                        <div class="pc-formula">EGCG 95% + Hyaluronic Acid 50mg + Vitamin B12 1mcg + Folic Acid 64.7mcg
+                            Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Securing the Cervix Where HPV Attacks — Not Just Lesion-Free.
+                            Biologically Safer.</div>
+                        <div class="pc-desc">HPV causes cancer by silently changing the cell environment — not just
+                            creating lesions. CerviProtek targets this at the cellular level. EGCG 95% inhibits
+                            HPV-mediated oncogenic activity and induces apoptosis in abnormal cervical epithelial cells.
+                            Hyaluronic Acid 50mg restores cervical epithelial integrity post LEEP, cryotherapy, or
+                            biopsy. True prevention is restoring cellular balance.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>EGCG 95% — inhibits HPV oncogenic activity;
+                                reduces oxidative stress at cellular level</div>
+                            <div class="pf"><span class="pf-dot"></span>Folic Acid + B12 — support DNA synthesis; reduce
+                                genomic instability</div>
+                            <div class="pf"><span class="pf-dot"></span>Hyaluronic Acid — enhances mucosal hydration and
+                                post-procedure healing</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Cervicitis</span><span class="pt">H/O Cervical Cancer</span><span
+                                class="pt">Recurrent Vaginitis</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · 1/day · 3–6 months</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BONE & NERVE & VIT D -->
+        <section class="csec" id="sec-bone">
+            <div class="chead">
+                <span class="clabel">🦴 Bone Health, Nerve &amp; Vitamin D</span>
+                <div class="cline"></div>
+                <span class="ccount">2 products</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc t-bone" data-cat="bone" onclick="openModal('tricalmin')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="tricalmin.jpg" alt="Tricalmin-CT®">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🦴 Bone &amp; Nerve</span>
+                        <div class="pc-name">Tricalmin-CT®</div>
+                        <div class="pc-formula">Calcium Carbonate + Calcitriol + Methylcobalamin + Folic Acid + Vitamin
+                            B6 Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Stronger Bones, Healthier Nerves, Better Life</div>
+                        <div class="pc-desc">Comprehensive bone-nerve-blood formulation. Strengthens bones, protects
+                            nerves, promotes myelination, supports neurotransmitter synthesis, and ensures haemoglobin
+                            formation. Ideal for post-menopausal women, pregnancy, lactation, and neuropathy management.
+                        </div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Calcitriol regulates calcium metabolism;
+                                enhances absorption &amp; muscle efficiency</div>
+                            <div class="pf"><span class="pf-dot"></span>Methylcobalamin protects nerves; promotes
+                                myelination</div>
+                            <div class="pf"><span class="pf-dot"></span>Useful in osteoporosis, arthritis, thyroid &amp;
+                                kidney disorders</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Neuropathy</span><span class="pt">Anemia</span><span class="pt">Bone
+                                Health</span><span class="pt">Muscle Function</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · The Strength You Can Trust</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+                <div class="pc t-vitd" data-cat="bone" onclick="openModal('cholexia')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="cholexia.jpg" alt="Cholexia">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">☀️ Vitamin D3 · Fertility</span>
+                        <div class="pc-name">Cholexia</div>
+                        <div class="pc-formula">Cholecalciferol 60,000 IU Softgel Capsules · Once-Weekly Dosage</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">Beyond Bone Health — Empowering Fertility in Both Men &amp; Women</div>
+                        <div class="pc-desc">High-strength Vitamin D3 60,000 IU weekly. Dual fertility benefit —
+                            regulates ovulation, improves ovarian reserve, reduces PCOS insulin resistance in women;
+                            boosts testosterone and sperm quality in men. Also modulates FSH, LH, AMH, estrogen and
+                            progesterone.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Lowers risk of miscarriage and adverse pregnancy
+                                outcomes</div>
+                            <div class="pf"><span class="pf-dot"></span>Reduces insulin resistance in PCOS; improves IVF
+                                outcomes</div>
+                            <div class="pf"><span class="pf-dot"></span>Strengthens immunity; reduces reproductive tract
+                                inflammation</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Vit D Deficiency</span><span class="pt">Osteoporosis</span><span
+                                class="pt">PCOS</span><span class="pt">Pregnancy</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Softgel Capsule · 60,000 IU Once Weekly</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ANTIOXIDANT -->
+        <section class="csec" id="sec-anti">
+            <div class="chead">
+                <span class="clabel">🟡 Antioxidant &amp; Anti-Inflammatory</span>
+                <div class="cline"></div>
+                <span class="ccount">1 product</span>
+            </div>
+            <div class="pg">
+
+                <div class="pc wide t-anti" data-cat="antioxidant" onclick="openModal('cumicure')">
+                    <div class="pc-top">
+
+                        <div class="pc-img">
+                            <img src="cumicure.jpg" alt="Cumicure">
+                        </div>
+
+                        <div class="pc-overlay"></div>
+                        <div class="pc-bg"></div>
+                        <span class="pc-badge">🟡 Antioxidant · Gold Standard</span>
+                        <div class="pc-name">Cumicure</div>
+                        <div class="pc-formula">Curcuma Longa 300mg (95% Purity) + Piper Nigrum 15mg (High Grade) +
+                            Lycopene 10mg (Pure Extract) Tablets</div>
+                    </div>
+                    <div class="pc-body">
+                        <div class="pc-tagline">An Age Old, Gold Standard Care — Chain Breaking Antioxidant</div>
+                        <div class="pc-desc">Curcumin 95% with Piperine enhances bioavailability dramatically. Lycopene
+                            delivers carotenoid antioxidant protection. Together they deliver 8 clinically proven
+                            activities. A valuable adjuvant in infertility — improves sperm quality in
+                            oligoasthenoteratozoospermia (OAT) and glycemic/lipid control in PCOS.</div>
+                        <div class="pc-feats">
+                            <div class="pf"><span class="pf-dot"></span>Anti-inflammatory: modulates
+                                pro/anti-inflammatory cytokines &amp; signalling</div>
+                            <div class="pf"><span class="pf-dot"></span>Improves sperm quality in OAT; glycemic control
+                                in PCOS</div>
+                            <div class="pf"><span class="pf-dot"></span>Hepato-protection: liver injuries, NAFLD,
+                                alcohol-related liver disease</div>
+                            <div class="pf"><span class="pf-dot"></span>Cardiovascular: cardiac hypertrophy, cholesterol
+                                absorption, dyslipidemia</div>
+                        </div>
+                        <div class="pc-tags">
+                            <span class="pt">Antioxidant</span><span class="pt">Anti-Inflammatory</span><span
+                                class="pt">Antiseptic</span><span class="pt">Infertility Adjuvant</span>
+                        </div>
+                    </div>
+                    <div class="pc-foot">
+                        <span class="pc-type">Tablet · 1–2 Daily</span>
+                        <span class="pc-avail">Available</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NUTRITION & PROTEIN -->
+    <section class="csec" id="sec-nutr">
+        <div class="chead">
+            <span class="clabel">💪 Nutrition &amp; Protein Supplement</span>
+            <div class="cline"></div>
+            <span class="ccount">1 product</span>
+        </div>
+        <div class="pg">
+            <div class="pc wide t-nutr" data-cat="nutrition" onclick="openModal('zspro')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="zspro.jpg" alt="ZS Pro™">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">💪 Nutrition · Protein · DHA</span>
+                    <div class="pc-name">ZS Pro™</div>
+                    <div class="pc-formula">Whey Protein + Essential Vitamins &amp; Minerals + DHA — Powder · Sugar Free
+                        · High Protein · 32 Nutrients</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Fast Acting, Powder Packed Protein — Strength, Immunity, Energy</div>
+                    <div class="pc-desc">Complete nutritional supplement combining high-quality Whey Protein with 32
+                        essential nutrients. Sugar-free formulation with added DHA for pregnant and lactating women.
+                        Supports fetal growth, brain development, and overall immunity. Recommended for elderly
+                        patients, post-operative convalescence, and pregnancy &amp; lactation.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Whey Protein: improves body's resistance; enhances
+                            overall immunity</div>
+                        <div class="pf"><span class="pf-dot"></span>Optimizes fetal growth &amp; weight during pregnancy
+                            — beneficial for expectant mothers</div>
+                        <div class="pf"><span class="pf-dot"></span>DHA: essential for developing brain and retina
+                            during the third trimester</div>
+                        <div class="pf"><span class="pf-dot"></span>DHA reduces risk of preterm birth &amp; preeclampsia
+                        </div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Pregnancy &amp; Lactation</span><span class="pt">Elderly Patients</span>
+                        <span class="pt">Post-Operative Convalescence</span><span class="pt">Immunity</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Powder · Sugar Free · 32 Nutrients</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGNANCY / FOLATE -->
+    <section class="csec" id="sec-preg">
+        <div class="chead">
+            <span class="clabel">🤰 Pregnancy &amp; Neuropathy — Folate Complex</span>
+            <div class="cline"></div>
+            <span class="ccount">1 product</span>
+        </div>
+        <div class="pg">
+            <div class="pc wide t-preg" data-cat="gynecology" onclick="openModal('foltrig')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="foltrig.jpg" alt="Foltrig">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">🤰 Pregnancy · Neuropathy · Anaemia</span>
+                    <div class="pc-name">Foltrig</div>
+                    <div class="pc-formula">L-Methylfolate 1mg + Methylcobalamin 1500mcg + Pyridoxal-5-Phosphate 0.5mg
+                        Tablets</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Triple Power in One Tablet: Protecting Pregnancy, Preventing Anaemia,
+                        Preserving Nerves</div>
+                    <div class="pc-desc">A synergistic combination addressing three critical areas: Pregnancy protection
+                        (lowers homocysteine, prevents placental abruption, low birth weight babies, pre-eclampsia &amp;
+                        preterm delivery), Anaemia prevention, and Neuropathy management. Manages neuropathy symptoms —
+                        numbness, tingling, electric-like pain &amp; burning sensation. Promotes myelination in neurons
+                        and improves nerve conduction velocity.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Lowers homocysteine levels; prevents placental
+                            abruption</div>
+                        <div class="pf"><span class="pf-dot"></span>Prevents low birth weight babies, pre-eclampsia
+                            &amp; preterm delivery</div>
+                        <div class="pf"><span class="pf-dot"></span>Acts as neuroprotective; promotes myelination;
+                            improves nerve conduction velocity</div>
+                        <div class="pf"><span class="pf-dot"></span>Improves somatic and autonomic symptoms with
+                            regression in diabetic neuropathy</div>
+                        <div class="pf"><span class="pf-dot"></span>Reduces nausea and vomiting intensity during
+                            pregnancy</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Neural Tube Defect Prevention</span><span class="pt">Megaloblastic
+                            Anaemia</span>
+                        <span class="pt">Nausea in Pregnancy</span><span class="pt">Neuropathy</span><span
+                            class="pt">Hyperhomocysteinaemia</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Tablet · 1 tablet Once Daily</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVER HEALTH -->
+    <section class="csec" id="sec-liver">
+        <div class="chead">
+            <span class="clabel">🫁 Liver Health</span>
+            <div class="cline"></div>
+            <span class="ccount">1 product</span>
+        </div>
+        <div class="pg">
+            <div class="pc wide t-liver" data-cat="liver" onclick="openModal('flavoliv')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="flavoliv.jpg" alt="Flavoliv-UD®">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">🫁 Liver Health · Hepatology</span>
+                    <div class="pc-name">Flavoliv-UD®</div>
+                    <div class="pc-formula">Ursodeoxycholic Acid (UDCA) 300mg Tablets</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Caring for Your Liver Health — For a Healthier &amp; Happier Liver</div>
+                    <div class="pc-desc">Ursodeoxycholic Acid 300mg is the gold standard hepatoprotective agent. Reduces
+                        adverse maternal and fetal outcomes in pregnant women with Intrahepatic Cholestasis of Pregnancy
+                        (ICP). Decreases concentration of toxic bile effects, prevents steatosis &amp; apoptosis, and
+                        normalises liver function tests. Prevents and reverses alcohol-induced liver damage. Prevents
+                        TNF receptor activation apoptosis.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Reduces adverse maternal and fetal outcomes in
+                            pregnant women with ICP</div>
+                        <div class="pf"><span class="pf-dot"></span>Effective and safe to improve pruritus and liver
+                            function in ICP</div>
+                        <div class="pf"><span class="pf-dot"></span>Prevents &amp; reverses alcohol-induced liver damage
+                        </div>
+                        <div class="pf"><span class="pf-dot"></span>Normalises liver function tests (AST, ALT, GGT, AP
+                            parameters)</div>
+                        <div class="pf"><span class="pf-dot"></span>Decreases serum biochemical indices; prevents
+                            steatosis &amp; apoptosis</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Jaundice</span><span class="pt">Chronic Hepatitis</span>
+                        <span class="pt">Alcoholic Liver Damage</span><span class="pt">Cirrhosis</span>
+                        <span class="pt">ICP — Intrahepatic Cholestasis of Pregnancy</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Tablet · 300mg · As prescribed</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GASTROENTEROLOGY -->
+    <section class="csec" id="sec-gastro">
+        <div class="chead">
+            <span class="clabel">🫃 Gastroenterology</span>
+            <div class="cline"></div>
+            <span class="ccount">2 products</span>
+        </div>
+        <div class="pg">
+            <div class="pc wide t-gastro" data-cat="gastro" onclick="openModal('frostdsr')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="frostdsr.jpg" alt="Frost-DSR™">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">🫃 Gastro · Dual Action</span>
+                    <div class="pc-name">Frost-DSR™</div>
+                    <div class="pc-formula">Pantoprazole 40mg (Enteric Coated Pellets) + Domperidone 30mg (Sustained
+                        Release Pellets) Capsules I.P.</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Dual Action Relief — Control Acid, Boost Motility! Balance Acid and Motion!
+                    </div>
+                    <div class="pc-desc">Synergistic combination delivering significant and remarkable relief from
+                        gastric discomfort. Pantoprazole 40mg (PPI): heals H. pylori-associated duodenal ulcers,
+                        prevents peptic ulcer relapse, relieves GERD/acid reflux, and heals oesophageal damage.
+                        Domperidone 30mg SR: dual mode anti-emetic &amp; prokinetic — increases digestive motility while
+                        calming stomach lining.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Pantoprazole: heals H. pylori duodenal ulcer;
+                            prevents relapse of peptic ulcer</div>
+                        <div class="pf"><span class="pf-dot"></span>Provides lasting relief from persistent heartburn
+                            caused by acid reflux disease</div>
+                        <div class="pf"><span class="pf-dot"></span>Domperidone: dual mode — anti-emetic &amp;
+                            prokinetic properties</div>
+                        <div class="pf"><span class="pf-dot"></span>Increases digestive tract motility; reduces nausea,
+                            vomiting, and bloating</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">GERD</span><span class="pt">Acid Reflux</span>
+                        <span class="pt">Peptic Ulcers</span><span class="pt">Gastritis</span>
+                        <span class="pt">Nausea &amp; Vomiting</span><span class="pt">Delayed Gastric Emptying</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Capsule I.P. · PPI + Prokinetic SR</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+
+            <div class="pc t-nausea" data-cat="gastro" onclick="openModal('onzodem')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="onzodem.jpg" alt="Onzodem-MD">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">💊 Anti-Emetic · ODT</span>
+                    <div class="pc-name">Onzodem-MD</div>
+                    <div class="pc-formula">Ondansetron 4mg &amp; 8mg Orally Disintegrating Tablets</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Trusted Care for Every Stage of Treatment — 97% Efficacy vs 45%
+                        Metoclopramide</div>
+                    <div class="pc-desc">Rapid-dissolving Ondansetron ODT with proven 24-hour anti-emetic efficacy.
+                        Superior to Metoclopramide: 97% vs 45% control over nausea &amp; vomiting. Non-sedating with
+                        fast onset. Rapid dissolution ensures convenient patient compliance even when swallowing is
+                        difficult.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Non-sedating; proven 24-hour efficacy vs
+                            metoclopramide (97% vs 45%)</div>
+                        <div class="pf"><span class="pf-dot"></span>Rapid dissolution — convenient for patients unable
+                            to swallow tablets</div>
+                        <div class="pf"><span class="pf-dot"></span>Effective in controlling post-operative and
+                            post-radiation nausea &amp; vomiting</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Chemotherapy-Induced N&amp;V</span><span class="pt">Post-Operative</span>
+                        <span class="pt">Post-Radiation</span><span class="pt">Gastroenteritis</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">ODT Tablet · 4mg &amp; 8mg Available</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN RELIEF -->
+    <section class="csec" id="sec-pain">
+        <div class="chead">
+            <span class="clabel">💊 Pain Relief &amp; Anti-Inflammatory</span>
+            <div class="cline"></div>
+            <span class="ccount">2 products</span>
+        </div>
+        <div class="pg">
+            <div class="pc t-pain" data-cat="pain" onclick="openModal('zapdol')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="zapdol.jpg" alt="Zapdol-SP™">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">💊 Pain Relief · Triple Action</span>
+                    <div class="pc-name">Zapdol-SP™</div>
+                    <div class="pc-formula">Aceclofenac 100mg + Paracetamol 325mg + Serratiopeptidase 15mg Tablets</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Because Pain Deserves No Chance — For Expression of Relief</div>
+                    <div class="pc-desc">Triple-action combination: Aceclofenac (superior GI tolerability NSAID — only
+                        1% GI side effects vs 6.6% Diclofenac) + Paracetamol (analgesic/antipyretic) + Serratiopeptidase
+                        (removes oedema allowing better antibiotic penetration). Rapid onset with 40% reduction in pain
+                        intensity in first 8 hours vs 27% with Diclofenac.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Serratiopeptidase removes oedema — allows better
+                            antibiotic penetration</div>
+                        <div class="pf"><span class="pf-dot"></span>Aceclofenac: superior GI tolerability (1% side
+                            effects vs 6.6% Diclofenac)</div>
+                        <div class="pf"><span class="pf-dot"></span>40% pain reduction in first 8 hrs — faster than
+                            Diclofenac (27%)</div>
+                        <div class="pf"><span class="pf-dot"></span>Improves compliance by avoiding co-prescription of
+                            gastroprotective agents</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Deep Episiotomy</span><span class="pt">Joint Pain &amp; Trauma</span>
+                        <span class="pt">Pelvic Inflammatory Disease</span><span class="pt">Post-Op Pain</span><span
+                            class="pt">Oedema</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Tablet · Triple Action</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+
+            <div class="pc t-pain" data-cat="pain" onclick="openModal('zifudol')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="zifudol.jpg" alt="Zifudol-P®">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">💊 Pain &amp; Inflammation · NSAID</span>
+                    <div class="pc-name">Zifudol-P®</div>
+                    <div class="pc-formula">Aceclofenac 100mg + Paracetamol 325mg Tablets<br><small
+                            style="font-size:.5rem;opacity:.7">Also available: Zifudol-SP (+ Serratiopeptidase
+                            15mg)</small></div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Fast Relief from Pain &amp; Inflammation</div>
+                    <div class="pc-desc">Aceclofenac — effective analgesic &amp; anti-inflammatory with superior GI
+                        tolerability vs other NSAIDs (only 1% GI side effects). Paracetamol — trusted analgesic &amp;
+                        antipyretic that enhances analgesia of NSAIDs. Together deliver rapid onset and prolonged pain
+                        relief with superior safety profile.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Superior GI tolerability: only 1% side effects vs
+                            6.6% with Diclofenac</div>
+                        <div class="pf"><span class="pf-dot"></span>40% reduction in pain intensity in first 8 hours vs
+                            27% with Diclofenac</div>
+                        <div class="pf"><span class="pf-dot"></span>Paracetamol enhances analgesic effect of Aceclofenac
+                            synergistically</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Osteoarthritis</span><span class="pt">Rheumatoid Arthritis</span>
+                        <span class="pt">Ankylosing Spondylitis</span><span class="pt">Acute Musculoskeletal Pain</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Tablet · Also available as Zifudol-SP</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANTIBIOTIC -->
+    <section class="csec" id="sec-abx">
+        <div class="chead">
+            <span class="clabel">🦠 Antibiotic</span>
+            <div class="cline"></div>
+            <span class="ccount">1 product</span>
+        </div>
+        <div class="pg">
+            <div class="pc wide t-abx" data-cat="antibiotic" onclick="openModal('claspmox')">
+                <div class="pc-top">
+
+                    <div class="pc-img">
+                        <img src="claspmox.jpg" alt="Clasp Mox-625™">
+                    </div>
+
+                    <div class="pc-overlay"></div>
+                    <div class="pc-bg"></div>
+                    <span class="pc-badge">🦠 Antibiotic · Broad Spectrum</span>
+                    <div class="pc-name">Clasp Mox-625™</div>
+                    <div class="pc-formula">Amoxicillin 500mg + Clavulanic Acid 125mg (Potassium Clavulanate Diluted IP)
+                        + Lactic Acid Bacillus 60 Million Spores Tablets</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-tagline">Most Trusted Antibiotic with Complete Care — Recommended by IDSA as
+                        First-Line Treatment</div>
+                    <div class="pc-desc">Effective against infections from gram-positive and gram-negative bacteria
+                        including Enterococcus, L. monocytogenes, Streptococcus, H. influenzae, M. catarrhalis, E. coli,
+                        K. pneumoniae, Salmonella, and Borrelia. Clavulanic Acid extends spectrum to
+                        penicillinase-producing organisms. Lactic Acid Bacillus prevents antibiotic-associated diarrhoea
+                        by maintaining intestinal microbiota. Recommended by IDSA for acute bacterial rhinosinusitis and
+                        community-acquired pneumonia.</div>
+                    <div class="pc-feats">
+                        <div class="pf"><span class="pf-dot"></span>Amoxicillin superiority: 98% vs 95% (Cefpodoxime)
+                            for Otitis Media; 97% vs 95% for LRTI</div>
+                        <div class="pf"><span class="pf-dot"></span>Clavulanic Acid: extends spectrum to
+                            penicillinase-producing organisms</div>
+                        <div class="pf"><span class="pf-dot"></span>Lactic Acid Bacillus: prevents antibiotic-associated
+                            diarrhoea; maintains gut microbiota</div>
+                        <div class="pf"><span class="pf-dot"></span>IDSA recommended first-line for acute bacterial
+                            rhinosinusitis &amp; community-acquired pneumonia</div>
+                        <div class="pf"><span class="pf-dot"></span>Add with meal to avoid GI side effects</div>
+                    </div>
+                    <div class="pc-tags">
+                        <span class="pt">Various Infections</span><span class="pt">Post-Surgical Infections</span>
+                        <span class="pt">Gynaecological Surgery</span><span class="pt">Preoperative Prophylaxis</span>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <span class="pc-type">Tablet · With Meal to Avoid GI Side Effects</span>
+                    <span class="pc-avail">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-inner">
+            <h2>Request Our Full Product Catalogue</h2>
+            <p>Connect with our medical team for detailed product information, samples, literature, or distribution
+                partnerships across India.</p>
+            <a href="index.html#contact" class="cta-btn">Enquire Now →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pgfoot">
+        <p>© 2024 Lenore Pharmaceuticals Private Limited. All rights reserved.</p>
+        <p style="font-weight:600;color:var(--red);font-size:.74rem;">Innovating Lives · Cultivating Happiness</p>
+        <a href="index.html#contact">Contact Us →</a>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-bg" id="modalBg" onclick="closeModalBg(event)">
+        <div class="modal" id="modalBox">
+            <button class="mclose" onclick="closeModal()">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const P = {
+            configest: { cat: 'Gynecology · Hormonal Therapy', name: 'Configest-SR®', formula: 'Natural Micronised Progesterone 200/300/400mg SR Tablet — Aqueous Base', tagline: 'Confident Support for Every Phase of Womanhood', desc: 'USFDA-approved sustained-release natural micronised progesterone in an aqueous base. Achieves therapeutic endometrial progesterone concentration of 13.9mg/ml with an 18-hour half-life enabling once-daily dosing. Bioidentical, well-tolerated, and safe for long-term use. The aqueous base ensures superior bioavailability over oil-based alternatives.', feats: ['Maintains uterine quiescence — significantly reduces risk of preterm labour', 'Enhances endometrial receptivity — improves implantation success in ART cycles', 'Reduces immune rejection of embryo via immuno-modulatory effect', 'Improves pregnancy outcomes in women with recurrent pregnancy loss (BOH)', 'Enhances quality of life during luteal phase insufficiency', 'Well tolerated with minimal side effects — bioidentical hormone', 'Sustained release maintains stable progesterone levels throughout the day'], dosage: '200–400mg once daily (as prescribed by physician)', form: 'Sustained Release Tablet · Aqueous Base', approval: 'USFDA Approved', indications: ['LPD — Luteal Phase Defect', 'LPS — Luteal Phase Support', 'ART Cycles', 'BOH — Bad Obstetric History', 'Preterm Labour Prevention'] },
+
+            meftm: { cat: 'Menstrual Health', name: 'MEF-TM™', formula: 'Tranexamic Acid 500mg + Mefenamic Acid 250mg Tablets', tagline: 'Comfort, Control, Confidence', desc: 'MEF-TM combines Tranexamic Acid (hemostatic agent that stabilises endometrial clots and reduces menstrual blood loss) with Mefenamic Acid (NSAID that relieves uterine cramps and reduces inflammation and pain). Together they deliver faster, broader relief and better compliance than any single-agent therapy. Non-hormonal and fertility-friendly.', feats: ['Controls heavy bleeding and severe pain simultaneously in one convenient tablet', 'Non-hormonal and fertility-friendly — no disruption to hormonal cycles', 'Short-course therapy 3–5 days only — started at onset of bleeding or pain', 'Better patient compliance due to combined, once-tablet formulation', 'Manages IUCD-associated heavy bleeding effectively', 'Faster relief vs. single agents — dual mechanism for quicker onset'], dosage: '1 tablet 2–3 times a day; start at onset of bleeding/pain; continue 3–5 days', form: 'Tablet', approval: 'Prescription Only', indications: ['Heavy Menstrual Bleeding — Menorrhagia', 'Painful Menstruation — Dysmenorrhoea', 'AUB / DUB', 'IUCD-Associated Heavy Bleeding'] },
+
+            esmyl: { cat: 'Uterine Tonic & Menstrual Wellness', name: 'Esmyl', formula: 'Saraca Indica 1800mg/5ml + Honey 500mg/5ml Syrup — 300ml', tagline: 'Delivers Smile, Naturally — Discomfort to Comfort', desc: 'A complete uterine tonic with the highest concentration of Saraca Indica available (1800mg/5ml). Saraca Indica has classical uterotonic and estrogenic properties that regulate menstrual flow, reduce pelvic inflammation, and improve ovarian function. The honey (500mg/5ml) provides superior taste, ensuring patient acceptability. The 300ml monthly pack assures a complete therapeutic course.', feats: ['Highest concentration of Saraca Indica 1800mg/5ml in its class', 'Excellent uterotonic effect — regularises menstrual flow and cycle control', 'Improves ovarian function through natural estrogenic mechanisms', 'Superior taste with honey 500mg/5ml — better patient acceptability and compliance', 'Monthly 300ml pack assures complete therapy and prevents early discontinuation'], dosage: 'As prescribed by physician; 300ml monthly pack for complete course', form: 'Syrup · 300ml Monthly Pack', approval: 'Prescription Only', indications: ['Menorrhagia', 'Dysfunctional Uterine Bleeding (DUB)', 'Metrorrhagia', 'Menstrual Irregularity', 'Infertility Support'] },
+
+            confiova: { cat: 'Fertility & Ovarian Reserve', name: 'Confiova', formula: 'Micronised DHEA 25mg + Folic Acid 2.5mg Tablets', tagline: 'The Confidence Behind Every Conception', desc: 'Declining ovarian reserve is a major cause of infertility. Pharmacokinetic evidence confirms 25mg TDS dosing maintains stable sustained serum DHEA levels — unlike 75mg once daily which creates a sharp peak followed by a rapid crash to near-zero. DHEA mechanism: DHEA → Testosterone ↑ → Estrogen ↑ → Ovarian Reserve ↑; also → IGF-1 → Ovulation Induction. As per Centre for Human Reproduction recommendation.', feats: ['Improves ovarian reserve markers — AMH (Anti-Müllerian Hormone) and Antral Follicle Count', 'Increases pregnancy and live birth rates in IVF cycles', 'Enhances egg quality and mitochondrial function (mitochondrial biogenesis → ATP → Better Egg Quality)', 'Supports folliculogenesis and steroidogenesis', 'Significantly reduces aneuploidy in oocytes and embryos', 'Boosts hormonal balance and delays ovarian aging', 'Folic Acid 2.5mg added for neural tube protection benefit'], dosage: '25mg TDS (three times daily) — preferred for 3–4 months', form: 'Tablet', approval: 'As per Centre for Human Reproduction Guidelines', indications: ['DOR — Diminished Ovarian Reserve', 'POA — Premature Ovarian Aging', 'POF — Premature Ovarian Failure', 'Poor Responders in IVF/ICSI'] },
+
+            ovacure: { cat: 'Fertility & Motherhood', name: 'OvacureSR', formula: 'Micronised Dehydroepiandrosterone 75mg SR Tablets', tagline: 'Fulfills the Desire of Motherhood — Transforming Desires to Smiles', desc: 'OvacureSR delivers DHEA 75mg in sustained-release form for once-daily convenience. Multiple clinicians across India have endorsed this product with documented patient success stories covering primary infertility, recurrent spontaneous abortions, and poor IVF responders achieving successful conceptions after OvacureSR treatment.', feats: ['Sustained release provides consistent DHEA plasma levels throughout the day', 'Enhances egg quality and ovarian reserve — better than immediate-release alternatives', 'Convenient once-daily dosing dramatically improves patient compliance', 'Real-world doctor-endorsed success stories across India', 'Helps poor IVF responders and women with low AMH achieve conception'], dosage: '75mg SR — once daily', form: 'Sustained Release Tablet', approval: 'Prescription Only', indications: ['Diminished Ovarian Reserve', 'IVF Poor Response', 'Primary Infertility', 'Recurrent Pregnancy Loss'] },
+
+            nufert: { cat: 'Female Fertility Support', name: 'Nufert-F', formula: 'L-Arginine 100mg + CoQ10 50mg + Chasteberry 100mg + Grape Seed Ext 50mg + Folic Acid 100mcg + NAC 100mg + Inositol 100mg + Zinc Sulphate 15mg + Omega-3 100mg', tagline: 'Countering Oxidative Stress & Supporting Fertility', desc: 'Oxidative stress is the common underlying mechanism in PCOS, endometriosis, tubal infertility, unexplained infertility, hydatidiform mole, embryopathy, and assisted reproduction failure. Nufert-F addresses all these conditions with a comprehensive 9-ingredient antioxidant blend. The addition of Folic Acid and Zinc delivers "Higher Probability of Pregnancy and Live Birth."', feats: ['L-Arginine: increases blood flow to uterus; improves endometrial receptivity and pregnancy rates', 'CoQ10: better ovulation induction response; decreases odds of premature ovarian function decline', 'Chasteberry Extract: improves hormonal balance; restores menstrual cycle; increases fertility', 'Grape Seed Extract: prevents ovarian aging; maintains homeostasis between proliferation and apoptosis', 'N-Acetylcysteine: improves insulin sensitivity in PCOS patients with hyperinsulinemia', 'Omega-3 Fatty Acid: improves fecundity, oocyte maturation and embryo implantation'], dosage: 'Once daily as prescribed', form: 'Tablet', approval: 'Prescription Only', indications: ['Female Fertility Support', 'PCOS Management', 'Hormonal Balance', 'Antioxidant Support', 'IVF Adjuvant', 'Unexplained Infertility'] },
+
+            nuova: { cat: 'PCOS Management', name: 'Nuova', formula: 'Myo-Inositol 1.1g + D-Chiro-Inositol 27.6mg + L-Methylfolate 1000mcg + Vitamin D3 1000IU + Chromium Picolinate 100mcg — Strawberry Flavour', tagline: 'Clinical Approach for PCOS Management', desc: 'PCOS is the main cause of infertility due to metabolic, hormonal, and ovarian dysfunctions. Nuova maintains the physiological MI:DCI ratio of 40:1. Clinical superiority: 69.3% (MI+DCI) vs 25.7% (Metformin) weight loss; 46.7% vs 13.6% spontaneous menstruation; 11.6% vs 3% spontaneous pregnancies. Chromium Picolinate addresses hyperinsulinemia — the true underlying cause of PCOS. Strawberry flavour ensures palatability.', feats: ['Improves endocrine parameters and insulin resistance in PCOS', 'Restores normal insulin sensitivity and metabolic function', 'Maintains physiological MI:DCI ratio of 40:1 — the optimal balance', 'Improves oocyte and embryo quality; increases pregnancy rates', 'Increases SHBG, lowers free androgens, restores ovulation', 'Increases spontaneous pregnancies by decreasing serum testosterone', 'Better tolerated than Metformin — fewer gastrointestinal side effects'], dosage: '1–2 tablets per day for 3–4 months', form: 'Tablet — Strawberry Flavour', approval: 'Prescription Only', indications: ['PCOS', 'Insulin Resistance', 'Anovulation', 'Infertility due to PCOS', 'Hyperandrogenism', 'Oligomenorrhoea'] },
+
+            cervi: { cat: 'Cervical Health & HPV Protection', name: 'CerviProtek®', formula: 'EGCG 95% + Hyaluronic Acid 50mg + Vitamin B12 1mcg + Folic Acid 64.7mcg Tablets', tagline: 'Securing the Cervix, Where HPV Attacks — Not Just Lesion-Free. Biologically Safer.', desc: 'HPV does not cause cancer merely by creating a lesion — it causes cancer by silently changing the cell environment through oxidative damage, cellular stress, and DNA instability, leading to apoptosis failure. CerviProtek targets true prevention by restoring cellular balance. EGCG 95% inhibits HPV-mediated oncogenic activity and induces apoptosis in abnormal cervical epithelial cells. So the cervix is not just treated — it is biologically strengthened.', feats: ['EGCG 95%: supports inhibition of HPV-mediated oncogenic activity; reduces oxidative stress', 'Folic Acid + B12: support DNA synthesis and repair; maintain methylation balance; reduce genomic instability', 'Hyaluronic Acid 50mg: restores cervical epithelial integrity; improves mucosal hydration', 'Enhances healing after colposcopy, LEEP, cryotherapy, or cervical biopsy', 'Supports skin hydration, elasticity, and youthful appearance', 'Provides antioxidant protection against oxidative cellular damage', 'B12 supports energy levels, nerve function, and red blood cell formation'], dosage: '1 tablet once a day for 3–6 months', form: 'Tablet', approval: 'Prescription Only', indications: ['Cervicitis', 'History of Cervical Cancer in Family', 'Recurrent Vaginitis', 'Post-Colposcopy / Post-LEEP Recovery', 'HPV-Positive Patients'] },
+
+            tricalmin: { cat: 'Bone Health & Neuropathy', name: 'Tricalmin-CT®', formula: 'Calcium Carbonate + Calcitriol + Methylcobalamin + Folic Acid + Vitamin B6 (Pyridoxine) Tablets', tagline: 'Stronger Bones, Healthier Nerves, Better Life', desc: 'Tricalmin-CT is a comprehensive bone-nerve-blood formulation designed for complete musculoskeletal and neural support. Calcium Carbonate strengthens bones and prevents fractures. Calcitriol (active Vitamin D) regulates calcium metabolism and enhances absorption and muscle efficiency. Methylcobalamin protects nerves and promotes myelination for healthy nerve conduction. Pyridoxine and Folic Acid complete the haematological benefits.', feats: ['Calcium Carbonate: strengthens bones; prevents fractures by improving calcium supply to bone matrix', 'Methylcobalamin: protects nerves; promotes myelination for healthy nerve function and conduction', 'Calcitriol: regulates calcium metabolism; enhances absorption and muscle efficiency', 'Pyridoxine (B6): supports neurotransmitter synthesis; reduces neuropathic symptoms', 'Folic Acid: essential for haemoglobin formation and healthy red blood cells', 'Useful in osteoporosis, osteomalacia, thyroid & kidney disorders, arthritis', 'Ideal for pregnancy, lactation, and post-menopausal women requiring bone protection'], dosage: 'As prescribed by physician', form: 'Tablet', approval: 'Prescription Only', indications: ['Neuropathy Management', 'Anemia Prevention', 'Bone Health Support', 'Muscle Function Improvement', 'Post-Menopausal Bone Loss', 'Pregnancy & Lactation'] },
+
+            cholexia: { cat: 'Vitamin D3 & Reproductive Health', name: 'Cholexia', formula: 'Cholecalciferol 60,000 IU Softgel Capsules', tagline: 'Beyond Bone Health — Empowering Fertility in Both Men & Women', desc: 'Cholexia delivers high-strength Vitamin D3 60,000 IU in once-weekly softgel capsules. For women: regulates ovulation, enhances endometrial receptivity, improves ovarian reserve, reduces insulin resistance in PCOS, improves IVF outcomes. For men: boosts testosterone production, improves sperm quality, reduces oxidative stress in testes. Additionally modulates reproductive hormones (FSH, LH, AMH, estrogen, progesterone) and lowers risk of miscarriage.', feats: ['Regulates ovulation and enhances endometrial receptivity in women', 'Improves ovarian reserve and reduces insulin resistance in PCOS', 'Boosts testosterone production and sperm quality in men', 'Reduces oxidative stress in testes for better male fertility', 'Modulates reproductive hormones: FSH, LH, AMH, estrogen, progesterone', 'Lowers risk of miscarriage and adverse pregnancy outcomes', 'Supports calcium & phosphorus absorption; essential for bone mineralisation'], dosage: '60,000 IU once weekly — or as prescribed by physician', form: 'Softgel Capsule', approval: 'Prescription Only', indications: ['Vitamin D3 Deficiency', 'Osteoporosis & Osteomalacia', 'Hypocalcemia & Hypoparathyroidism', 'PCOS', 'Pregnancy & Lactation', 'Muscle Weakness & Fatigue due to Low Vitamin D'] },
+
+            cumicure: { cat: 'Antioxidant & Anti-Inflammatory', name: 'Cumicure', formula: 'Curcuma Longa 300mg (95% Purity) + Piper Nigrum 15mg (High Grade) + Lycopene 10mg (Pure Extract) Tablets', tagline: 'An Age Old, Gold Standard Care — Chain Breaking Antioxidant', desc: 'Curcumin 95% (highest purity extract) with Piperine (which dramatically enhances curcumin bioavailability) and Lycopene (carotenoid antioxidant synergy). Delivers 8 evidence-based pharmacological activities. A valuable adjuvant in infertility treatment — improves sperm quality in OAT and glycemic/lipid metabolism in PCOS. Cardiovascular, hepatic, and neuroprotective benefits make it a truly comprehensive antioxidant.', feats: ['Anti-Inflammatory: modulates pro/anti-inflammatory cytokines and signalling pathway', 'Anti-Cancer: targets cancer cell growth, proliferation, apoptosis, metastasis & invasion', 'Immune Regulation: modulates immune cells and immune molecules', 'Anti-Diabetic: improves metabolism and glycemic control in PCOS', 'Neuro-Protection: against inflammation and neurodegenerative disease', 'Cardiovascular Protection: cardiac hypertrophy, cholesterol absorption, dyslipidemia', 'Hepato-Protection: liver injuries, drugs, alcohol, NAFLD, Non-Alcoholic Fatty Liver', 'Anti-Oxidant: removes reactive oxygen & nitrogen, metal chelation, enzyme regulation'], dosage: '1–2 tablets daily', form: 'Tablet (95% Purity Extract)', approval: 'Prescription Only', indications: ['Antioxidant Support', 'Anti-Inflammatory Conditions', 'Antiseptic Properties', 'Infertility Adjuvant — OAT Sperm Quality', 'PCOS Metabolic Management'] },
+
+            zspro: { cat: 'Nutrition & Protein Supplement', name: 'ZS Pro™', formula: 'Whey Protein + Essential Vitamins & Minerals + DHA — Powder (Sugar Free, 32 Nutrients)', tagline: 'Fast Acting, Powder Packed Protein — Strength, Immunity, Energy', desc: 'ZS Pro is a comprehensive nutritional powder combining high-quality Whey Protein with 32 essential vitamins, minerals, and DHA. Sugar-free formulation specially designed for pregnant and lactating women, elderly patients, and post-operative convalescence. DHA is critical for third-trimester fetal brain and retina development, while Whey Protein enhances overall immunity and optimises fetal growth and weight.', feats: ['Whey Protein: improves body\'s resistance; enhances overall immunity effectively', 'Optimizes fetal growth and weight during pregnancy — vital for expectant mothers', 'DHA: essential for developing brain and retina during the critical third trimester', 'DHA reduces risk of preterm birth and preeclampsia in pregnant women', '32 essential nutrients support comprehensive nutritional needs in one formula', 'Sugar-free — safe for gestational diabetes and diabetic patients'], dosage: 'As prescribed; powder to be mixed with milk or water', form: 'Powder — Sugar Free', approval: 'OTC / As Recommended', indications: ['Pregnancy & Lactation', 'Elderly Patients', 'Post-Operative Convalescence', 'Immunity Enhancement', 'Malnutrition & Undernutrition'] },
+
+            foltrig: { cat: 'Pregnancy, Neuropathy & Anaemia Prevention', name: 'Foltrig', formula: 'L-Methylfolate 1mg + Methylcobalamin 1500mcg + Pyridoxal-5-Phosphate 0.5mg Tablets', tagline: 'Triple Power in One Tablet: Protecting Pregnancy, Preventing Anaemia, Preserving Nerves', desc: 'Foltrig is a synergistic combination addressing three critical clinical needs simultaneously. In pregnancy: lowers homocysteine levels, prevents placental abruption, low birth weight babies, pre-eclampsia, and preterm delivery. For neuropathy: promotes myelination in neurons, improves nerve conduction velocity, reduces numbness/tingling/electric-like pain. For anaemia: prevents megaloblastic anaemia due to folate deficiency.', feats: ['Lowers homocysteine levels; prevents placental abruption in pregnancy', 'Prevents low birth weight babies, pre-eclampsia and preterm delivery', 'Acts as neuroprotective; promotes myelination; improves nerve conduction velocity', 'Improves plasma/serum homocysteine levels and neuropathic symptoms', 'Improves somatic and autonomic symptoms with regression in diabetic neuropathy', 'Reduces pain, numbness and tingling sensations — burning sensation relief', 'Reduces intensity of nausea and vomiting during pregnancy'], dosage: '1 tablet once daily', form: 'Tablet', approval: 'Prescription Only', indications: ['Prevent Neural Tube Defect', 'Megaloblastic Anaemia Prevention', 'Hyperhomocysteinaemia in Pregnancy', 'Neuropathy — Numbness & Tingling', 'Nausea & Vomiting During Pregnancy', 'Pernicious Anaemia'] },
+
+            flavoliv: { cat: 'Liver Health & Hepatology', name: 'Flavoliv-UD®', formula: 'Ursodeoxycholic Acid (UDCA) 300mg Tablets', tagline: 'Caring for Your Liver Health — For a Healthier & Happier Liver', desc: 'Ursodeoxycholic Acid (UDCA) 300mg is the gold-standard hepatoprotective and bile acid modulating agent. Particularly critical in Intrahepatic Cholestasis of Pregnancy (ICP) — reduces adverse maternal and fetal outcomes, improves pruritus, and normalises liver function. Decreases concentration of toxic bile effects, prevents steatosis and apoptosis, and prevents TNF receptor activation. Improved hepatic health is essential for overall good health in cholestasis liver disease.', feats: ['Reduces adverse maternal and fetal outcomes in pregnant women with ICP', 'Effective and safe to improve pruritus and liver function in ICP', 'Prevents & reverses alcohol-induced liver damage', 'Normalises liver function tests including AST, ALT, GGT, and AP parameters', 'Decreases serum biochemical indices; prevents steatosis & apoptosis', 'Prevents TNF receptor activation apoptosis', 'Decreases concentration of toxic bile effects — cytoprotective action'], dosage: 'As prescribed by hepatologist/physician', form: 'Tablet — 300mg', approval: 'Prescription Only', indications: ['Jaundice', 'Chronic Hepatitis', 'Alcoholic Liver Damage', 'Cirrhosis Steatosis Cholestasis', 'Intrahepatic Cholestasis of Pregnancy (ICP)'] },
+
+            frostdsr: { cat: 'Gastroenterology', name: 'Frost-DSR™', formula: 'Pantoprazole 40mg (Enteric Coated Pellets) + Domperidone 30mg (Sustained Release Pellets) Capsules I.P.', tagline: 'Dual Action Relief Control Acid, Boost Motility! Balance Acid and Motion!', desc: 'A powerful synergistic combination providing significant and remarkable relief from gastric discomfort. Pantoprazole 40mg (PPI in enteric-coated pellets): heals H. pylori-associated duodenal ulcers, prevents peptic ulcer relapses, relieves persistent heartburn from acid reflux, and heals oesophageal damage. Domperidone 30mg SR (sustained release): dual mode anti-emetic and prokinetic — increases digestive tract motility while calming stomach lining.', feats: ['Pantoprazole: heals H. pylori-associated duodenal ulcer and prevents peptic ulcer relapse', 'Provides lasting relief from persistent heartburn caused by acid reflux disease (GERD)', 'Domperidone: anti-emetic and prokinetic properties — dual mode of action', 'Calming effect on stomach lining + increased digestive motility simultaneously', 'Synergistic combination: significant and remarkable relief from discomfort and symptoms', 'Also heals possible damage to the oesophagus caused by acid reflux'], dosage: 'As prescribed — typically once daily before meals', form: 'Capsule I.P. — Dual Release Technology', approval: 'Prescription Only', indications: ['GERD and Acid Reflux', 'Peptic Ulcers and Gastritis', 'Nausea, Vomiting, and Bloating', 'Delayed Gastric Emptying', 'H. Pylori-Associated Duodenal Ulcer'] },
+
+            onzodem: { cat: 'Anti-Emetic / Gastroenterology', name: 'Onzodem-MD', formula: 'Ondansetron 4mg & 8mg Orally Disintegrating Tablets', tagline: 'Trusted Care for Every Stage of Treatment — Superior Control Over Nausea & Vomiting', desc: 'Ondansetron ODT (Orally Disintegrating Tablet) provides rapid, non-sedating anti-emetic control with proven 24-hour efficacy. Clinical comparison: Onzodem achieves 97% control over nausea & vomiting vs only 45% with Metoclopramide — a dramatic clinical advantage. Rapid dissolution ensures convenient use even for patients who cannot swallow regular tablets. Effective across all clinical settings: chemotherapy, post-operative, post-radiation, and gastroenteritis.', feats: ['97% efficacy in controlling nausea & vomiting vs 45% with Metoclopramide', 'Non-sedating with proven 24-hour sustained anti-emetic efficacy', 'Rapid dissolution ODT — convenient for patients with swallowing difficulties', 'Effective in controlling post-operative and post-radiation nausea & vomiting', 'Reduces vomiting and facilitates rehydration in acute gastroenteritis'], dosage: 'As prescribed; available as 4mg and 8mg ODT', form: 'Orally Disintegrating Tablet (ODT) — 4mg & 8mg', approval: 'Prescription Only', indications: ['Antiemetic in Chemotherapy-Induced N&V', 'Post-Operative Nausea & Vomiting', 'Post-Radiation Nausea & Vomiting', 'Gastroenteritis-Associated Vomiting'] },
+
+            zapdol: { cat: 'Pain Relief & Anti-Inflammatory', name: 'Zapdol-SP™', formula: 'Aceclofenac 100mg + Paracetamol 325mg + Serratiopeptidase 15mg Tablets', tagline: 'Because Pain Deserves No Chance — For Expression of Relief', desc: 'Triple-action pain and inflammation combination. Aceclofenac (superior NSAID with only 1% GI side effects vs 6.6% with Diclofenac) provides analgesic and anti-inflammatory action. Paracetamol enhances overall analgesia. Serratiopeptidase is the key differentiator — it removes oedema and allows better antibiotic penetration when inflammation reduces antibiotic efficacy. Delivers 40% pain reduction in first 8 hours vs 27% with Diclofenac.', feats: ['Serratiopeptidase removes oedema — allows better antibiotic penetration in infected tissues', 'Aceclofenac: superior GI tolerability — only 1% GI side effects vs 6.6% with Diclofenac', 'Rapid pain relief: 40% reduction in pain intensity in first 8 hours (vs 27% with Diclofenac)', 'Improves patient compliance by avoiding co-prescription of gastroprotective agents', 'Triple synergy: analgesic + anti-inflammatory + anti-oedema in one tablet'], dosage: 'As prescribed by physician', form: 'Tablet', approval: 'Prescription Only', indications: ['Deep Episiotomy', 'Joint Pain & Trauma', 'Pelvic Inflammatory Disease', 'Post-Operative Pain', 'Oedema & Swelling'] },
+
+            zifudol: { cat: 'Pain Relief & Anti-Inflammatory', name: 'Zifudol-P® / Zifudol-SP™', formula: 'Aceclofenac 100mg + Paracetamol 325mg Tablets (Zifudol-P) | Also: Aceclofenac 100mg + Serratiopeptidase 15mg + Paracetamol 325mg (Zifudol-SP)', tagline: 'Fast Relief from Pain & Inflammation — Superior NSAID with Better GI Safety', desc: 'Zifudol-P combines Aceclofenac (effective analgesic & anti-inflammatory with superior GI tolerability compared to other NSAIDs) with Paracetamol (trusted analgesic & antipyretic that enhances the analgesia of NSAIDs). Clinical evidence: Aceclofenac achieves only 1% GI side effects vs 6.6% with Diclofenac, and 40% reduction in pain intensity in first 8 hours vs 27% with Diclofenac. Also available as Zifudol-SP with added Serratiopeptidase for anti-oedema benefit.', feats: ['Aceclofenac: superior GI tolerability — only 1% side effects vs 6.6% with Diclofenac', '40% reduction in pain intensity within first 8 hours — more effective than Diclofenac', 'Paracetamol enhances and prolongs the analgesic effect of Aceclofenac synergistically', 'Also available as Zifudol-SP with Serratiopeptidase for anti-oedema and better antibiotic penetration'], dosage: 'As prescribed by physician', form: 'Tablet — Zifudol-P (2 ingredients) | Zifudol-SP (3 ingredients)', approval: 'Prescription Only', indications: ['Osteoarthritis Pain Relief', 'Rheumatoid Arthritis', 'Ankylosing Spondylitis', 'Acute Musculoskeletal Pain'] },
+
+            claspmox: { cat: 'Antibiotic — Broad Spectrum', name: 'Clasp Mox-625™', formula: 'Amoxicillin 500mg + Clavulanic Acid 125mg (Potassium Clavulanate Diluted IP) + Lactic Acid Bacillus 60 Million Spores Tablets', tagline: 'Most Trusted Antibiotic with Complete Care — IDSA Recommended First-Line', desc: 'Clasp Mox-625 is a complete antibiotic formulation combining broad-spectrum Amoxicillin with beta-lactamase inhibitor Clavulanic Acid, plus Lactic Acid Bacillus for gut protection. Effective against gram-positive and gram-negative bacteria including Enterococcus, L. monocytogenes, Streptococcus, H. influenzae, M. catarrhalis, E. coli, K. pneumoniae, Salmonella, and Borrelia species. Recommended as first-line treatment by IDSA for acute bacterial rhinosinusitis and community-acquired pneumonia.', feats: ['Superior efficacy: Amoxicillin 98% vs Cefpodoxime 95% for Otitis Media; 97% vs 95% for LRTI', 'Clavulanic Acid: broad spectrum cover against penicillinase-producing organisms', 'Lactic Acid Bacillus: prevents antibiotic-associated diarrhoea; maintains intestinal microbiota balance', 'IDSA recommended first-line for acute bacterial rhinosinusitis and community-acquired pneumonia', 'Add with meal to avoid GI side effects — complete gut-friendly formulation'], dosage: 'As prescribed; add with meal to avoid GI side effects', form: 'Tablet — Amoxicillin-Clavulanate + Probiotic', approval: 'Prescription Only', indications: ['Various Bacterial Infections', 'Post-Surgical Infections', 'Gynaecological Surgery', 'Preoperative Prophylaxis', 'Acute Bacterial Rhinosinusitis', 'Community-Acquired Pneumonia'] }
+        };
+
+        function openModal(id) {
+            const p = P[id]; if (!p) return;
+            document.getElementById('modalContent').innerHTML = `
+    <div class="mhdr">
+      <span class="mcat">${p.cat}</span>
+      <div class="mname">${p.name}</div>
+      <div class="mformula">${p.formula}</div>
+      <div class="mtagline">${p.tagline}</div>
+    </div>
+    <div class="mbody">
+      <span class="mlabel">Overview</span>
+      <p class="mdesc">${p.desc}</p>
+      <span class="mlabel">Key Benefits &amp; Mechanism</span>
+      <div class="mfeats">${p.feats.map(f => `<div class="mfeat"><span class="mfeat-icon">✓</span><span>${f}</span></div>`).join('')}</div>
+      <span class="mlabel">Product Details</span>
+      <div class="mgrid">
+        <div class="mbox"><span class="mbox-l">Dosage</span><span class="mbox-v">${p.dosage}</span></div>
+        <div class="mbox"><span class="mbox-l">Dosage Form</span><span class="mbox-v">${p.form}</span></div>
+        <div class="mbox"><span class="mbox-l">Availability</span><span class="mbox-v" style="color:#1a7a3c">● Available Across India</span></div>
+        <div class="mbox"><span class="mbox-l">Approval</span><span class="mbox-v">${p.approval}</span></div>
+      </div>
+      <span class="mlabel">Indications</span>
+      <div class="minds">${p.indications.map(i => `<span class="mind">${i}</span>`).join('')}</div>
+    </div>`;
+            document.getElementById('modalBg').classList.add('on');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() { document.getElementById('modalBg').classList.remove('on'); document.body.style.overflow = ''; }
+        function closeModalBg(e) { if (e.target === document.getElementById('modalBg')) closeModal(); }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // Filter
+        const fbtns = document.querySelectorAll('.fb');
+        const cards = document.querySelectorAll('.pc[data-cat]');
+        const countEl = document.getElementById('prodCount');
+        fbtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                fbtns.forEach(b => b.classList.remove('on')); btn.classList.add('on');
+                const f = btn.dataset.filter; let v = 0;
+                cards.forEach(c => { const show = f === 'all' || c.dataset.cat === f; c.classList.toggle('hidden', !show); if (show) v++; });
+                countEl.textContent = v + (v === 1 ? ' product' : ' products');
+                document.querySelectorAll('.csec').forEach(s => {
+                    const vis = s.querySelectorAll('.pc:not(.hidden)'); s.classList.toggle('hidden', vis.length === 0);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
