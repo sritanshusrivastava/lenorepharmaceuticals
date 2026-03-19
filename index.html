@@ -1846,75 +1846,40 @@
     }
 
     /* POPUP */
-    .popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: all .3s ease;
-      z-index: 9999;
-    }
+    /* TOAST NOTIFICATION */
+.popup{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%) translateY(100px);
 
-    .popup.active {
-      visibility: visible;
-      opacity: 1;
-    }
+  background:#111;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:10px;
 
-    .popup-box {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 16px;
-      text-align: center;
-      max-width: 350px;
-      width: 90%;
-      transform: scale(0.8);
-      transition: all .3s ease;
-    }
+  font-size:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
-    .popup.active .popup-box {
-      transform: scale(1);
-    }
+  opacity:0;
+  visibility:hidden;
+  transition:all 0.4s ease;
 
-    .popup-icon {
-      width: 60px;
-      height: 60px;
-      background: #e10600;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin: 0 auto 15px;
-    }
+  z-index:9999;
+}
 
-    .popup-box h3 {
-      margin-bottom: 10px;
-      color: #1a1a1a;
-    }
+/* SHOW TOAST */
+.popup.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
 
-    .popup-box p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .popup-box button {
-      background: #e10600;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .popup-box button:hover {
-      background: #c40000;
-    }
+/* INNER TEXT */
+.popup-box{
+  padding:0;
+  background:none;
+}
 
     /* FOOTER */
     footer {
@@ -2064,35 +2029,6 @@
       transform: translateY(-4px);
     }
 
-    /* TOAST */
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: var(--ink);
-      color: var(--white);
-      padding: 1rem 2rem;
-      border-radius: var(--r-md);
-      font-size: .88rem;
-      font-weight: 600;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
-      border: 1px solid rgba(255, 255, 255, .1);
-      z-index: 1000;
-      transition: transform .4s var(--ease);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      max-width: 90%;
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .toast-icon {
-      font-size: 1.1rem;
-    }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -2202,11 +2138,21 @@
       .section-pad {
         padding: 55px 0;
       }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
-      nav {
-        position: fixed;
-        top: 0;
-      }
+  .nav-inner {
+    height: 60px;
+  }
+
+  .nav-logo img {
+    height: 40px !important;
+  }
+
 
       .hero {
         padding-top: 74px;
@@ -2284,6 +2230,35 @@
         right: 1.2rem;
       }
     }
+    @media (max-width:768px){
+
+  header{
+    padding:10px 15px;
+  }
+
+  .nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .logo img{
+    height:40px;
+  }
+
+  .nav-toggle{
+    display:block;
+    font-size:24px;
+    color:#e10600;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+}
+
+
   </style>
 </head>
 
@@ -2371,7 +2346,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Therapeutic Areas</a></li>
-        <li><a href="#products">Products</a></li>
+        <li><a href="product.html">Products</a></li>
         <li><a href="#why">Why Lenore</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -2410,7 +2385,7 @@
               healthcare community — with deep expertise in Gynecology &amp; Primary Care and an unwavering commitment
               to patient outcomes.</p>
             <div class="hero-actions">
-              <a href="#products" class="btn btn-primary">Explore Our Products →</a>
+              <a href="product.html" class="btn btn-primary">Explore Our Products →</a>
               <a href="#contact" class="btn btn-outline">Partner With Us</a>
             </div>
           </div>
@@ -2946,14 +2921,14 @@
               <div class="contact-icon" aria-hidden="true">📞</div>
               <div>
                 <div class="contact-label">Phone</div>
-                <div class="contact-value"><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
+                <div class="contact-value"><a href="tel:+919170117973">+91 9170 11 7973</a></div>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">✉️</div>
               <div>
                 <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:info@lenorepharma.com">info@lenorepharma.com</a></div>
+                <div class="contact-value"><a href="mailto:Lenorepharma@gmail.com">Lenorepharma@gmail.com</a></div>
               </div>
             </div>
             <div class="contact-item">
@@ -3071,12 +3046,6 @@
 
   <!-- BACK TO TOP -->
   <button class="back-top" id="backTop" aria-label="Scroll back to top">↑</button>
-
-  <!-- TOAST -->
-  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
-    <span class="toast-icon" aria-hidden="true">✓</span>
-    <span id="toastMsg">Enquiry submitted successfully!</span>
-  </div>
 
   <script>
     'use strict';
@@ -3252,19 +3221,21 @@
     //       });
     //     })();
 
-    const form = document.querySelector("form");
-    const popup = document.getElementById("successPopup");
+  
+const form = document.querySelector("form");
+const popup = document.getElementById("successPopup");
 
-    form.addEventListener("submit", function () {
-      setTimeout(() => {
-        popup.classList.add("active");
-      }, 500);
-    });
+form.addEventListener("submit", function(){
+  setTimeout(() => {
+    popup.classList.add("active");
 
-    function closePopup() {
+    // AUTO HIDE AFTER 3s
+    setTimeout(() => {
       popup.classList.remove("active");
-    }
+    }, 3000);
 
+  }, 500);
+});
 
   </script>
 </body>
